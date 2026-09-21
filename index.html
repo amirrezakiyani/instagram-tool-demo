@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ابزار آزمایشی تحلیل لینک اینستاگرام با طراحی سه‌بعدی">
+  <title>دانلودینو | ابزار لینک اینستاگرام</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap');
+    :root{--bg:#080817;--card:#15152b;--text:#f7f7ff;--muted:#aaaaca;--pink:#ff4db8;--blue:#5c7cff;--cyan:#40e0d0}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 10%,#28205b 0,transparent 32%),radial-gradient(circle at 90% 70%,#301337 0,transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+    .orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(2px);opacity:.35;pointer-events:none;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:inset -35px -25px 65px #070713, inset 30px 25px 50px #fff5;left:8%;top:16%;transition:transform .18s ease}
+    .wrap{position:relative;max-width:1100px;margin:auto;padding:26px 20px 50px}.nav{display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:1.35rem}.logo b{color:var(--pink)}.badge{border:1px solid #ffffff20;border-radius:999px;padding:8px 14px;color:var(--muted);font-size:.78rem}
+    .hero{text-align:center;padding:90px 0 40px}.eyebrow{color:var(--cyan);font-weight:600}.hero h1{font-size:clamp(2.1rem,6vw,4.8rem);line-height:1.15;margin:15px auto;max-width:850px}.hero h1 span{background:linear-gradient(90deg,var(--pink),#ffb4e1,var(--cyan));-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;margin:0 auto 28px;line-height:2}
+    .search{display:flex;gap:10px;max-width:760px;margin:auto;background:#ffffff0d;border:1px solid #ffffff20;border-radius:20px;padding:10px;backdrop-filter:blur(18px);box-shadow:0 20px 70px #0006}.search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;padding:13px}.search button,.download{border:0;border-radius:14px;padding:0 22px;background:linear-gradient(135deg,var(--pink),var(--blue));color:white;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 25px #ff4db855}.search button:hover,.download:hover{transform:translateY(-2px)}
+    #result{display:none;margin:26px auto;max-width:760px;background:var(--card);border:1px solid #ffffff18;border-radius:22px;padding:22px;text-align:right}.result-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.type{color:var(--cyan)}.notice{font-size:.85rem;color:var(--muted);line-height:1.8}.download{height:45px}.ad{max-width:760px;height:90px;border:1px dashed #ffffff30;border-radius:18px;display:grid;place-items:center;color:#777797;margin:30px auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.feature{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;padding:22px}.feature h3{margin:0 0 8px}.feature p{color:var(--muted);line-height:1.8;font-size:.9rem}.footer{text-align:center;color:#777797;margin-top:60px;font-size:.8rem}@media(max-width:650px){.hero{padding-top:65px}.search{flex-direction:column}.search button{height:48px}.features{grid-template-columns:1fr}.orb{width:180px;height:180px}}
+  </style>
+</head>
+<body>
+  <div class="orb" id="orb"></div>
+  <main class="wrap">
+    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><div class="badge">نسخه آزمایشی ۰.۱</div></nav>
+    <section class="hero"><div class="eyebrow">سریع، ساده، مدرن</div><h1>لینک اینستاگرام را بده، <span>مرتب تحویل بگیر</span></h1><p>این نسخه برای نمایش طراحی و تجربه کاربری ساخته شده است. لینک عمومی پست، ریلز یا پروفایل را وارد کن.</p>
+      <form class="search" id="form"><input id="url" type="url" required placeholder="https://www.instagram.com/..." aria-label="آدرس اینستاگرام"><button type="submit">تحلیل لینک</button></form>
+      <div id="result"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">پیش‌نمایش آزمایشی فعال شد. دانلود واقعی فقط برای محتوای خودت یا محتوایی که اجازه دریافت آن را داری، پس از اتصال سرویس مجاز فعال می‌شود.</p><button class="download" type="button" onclick="alert('در نسخه آزمایشی دانلود واقعی فعال نیست.')">دانلود مجاز</button></div>
+      <div class="ad">جایگاه تبلیغات شما</div>
+    </section>
+    <section class="features"><article class="feature"><h3>طراحی سه‌بعدی</h3><p>پس‌زمینه و عناصر صفحه با حرکت موس واکنش نشان می‌دهند.</p></article><article class="feature"><h3>تشخیص لینک</h3><p>نوع لینک به‌صورت نمایشی از روی آدرس تشخیص داده می‌شود.</p></article><article class="feature"><h3>امن و مسئولانه</h3><p>پردازش آینده فقط برای محتوای مجاز و دارای اجازه انجام خواهد شد.</p></article></section>
+    <footer class="footer">© ۲۰۲۶ دانلودینو · قوانین استفاده · حریم خصوصی · گزارش محتوا</footer>
+  </main>
+  <script>
+    const orb=document.getElementById('orb'); document.addEventListener('mousemove',e=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.08}px, ${(e.clientY-innerHeight/2)*.08}px)`});
+    document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const u=document.getElementById('url').value.toLowerCase();let t='محتوای اینستاگرام';if(u.includes('/reel'))t='ریلز';else if(u.includes('/p/'))t='پست';else if(u.includes('/audio'))t='آهنگ';else if(u.match(/instagram\.com\/?$/))t='پروفایل';document.getElementById('type').textContent=t;document.getElementById('title').textContent='تحلیل نمایشی با موفقیت انجام شد';document.getElementById('result').style.display='block'});
+  </script>
+</body>
+</html>
