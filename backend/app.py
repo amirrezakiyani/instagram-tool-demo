@@ -101,6 +101,30 @@ def fetch_bytes(url: str) -> bytes:
     return response.content
 
 
+def download_video_with_audio(url: str, info: dict) -> tuple[bytes, str]:
+    with tempfile.TemporaryDirectory() as folder:
+        output = Path(folder) / "media.%(ext)s"
+        cmd = [
+            "yt-dlp",
+            "--no-playlist",
+            "--no-warnings",
+            "--socket-timeout", "20",
+            "--retries", "1",
+            "--user-agent", "Mozilla/5.0 (compatible; Downloadino/1.0)",
+            "-f", "bestvideo*+bestaudio/best",
+            "--merge-output-format", "mp4",
+            "-o", str(output),
+            url,
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        if result.returncode != 0:
+            raise RuntimeError(result.stderr[-800:] or "video download failed")
+        files = [p for p in Path(folder).glob("media.*") if p.is_file()]
+        if not files:
+            raise RuntimeError("video file unavailable")
+        return files[0].read_bytes(), "mp4"
+
+
 @app.get("/health")
 def health():
     return jsonify({"ok": True, "service": "downloadino-experimental"})
@@ -125,9 +149,13 @@ def download():
                 input_path.write_bytes(fetch_bytes(source))
                 subprocess.run(["ffmpeg", "-y", "-i", str(input_path), "-vn", "-acodec", "libmp3lame", "-b:a", "192k", str(output_path)], capture_output=True, timeout=90, check=True)
                 return send_file(io.BytesIO(output_path.read_bytes()), mimetype="audio/mpeg", as_attachment=True, download_name=safe_name(info, "mp3"))
-        source, ext = pick_format(info, audio_only=False, kind=kind)
-        data = fetch_bytes(source)
-        mime = "image/jpeg" if kind in {"photo", "image"} else "video/mp4"
+        if kind not in {"photo", "image"}:
+            data, ext = download_video_with_audio(url, info)
+            mime = "video/mp4"
+        else:
+            source, ext = pick_format(info, audio_only=False, kind=kind)
+            data = fetch_bytes(source)
+            mime = "image/jpeg"
         return send_file(io.BytesIO(data), mimetype=mime, as_attachment=True, download_name=safe_name(info, ext))
     except subprocess.TimeoutExpired:
         return jsonify({"error": "پردازش طول کشید؛ دوباره امتحان کنید."}), 504
