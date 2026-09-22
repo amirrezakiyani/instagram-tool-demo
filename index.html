@@ -49,7 +49,7 @@
     let currentUrl = '';
     function classify(url){
       try { const u=new URL(url); if(!['instagram.com','www.instagram.com','m.instagram.com'].includes(u.hostname.toLowerCase())) return null;
-        const p=u.pathname.toLowerCase(); if(p.startsWith('/reel/')||p.startsWith('/reels/')) return 'ریلز'; if(p.startsWith('/p/')) return 'پست / ویدئو'; if(p.startsWith('/tv/')) return 'ویدئو'; if(p.startsWith('/audio/')) return 'آهنگ'; if(p.split('/').filter(Boolean).length===1) return 'پروفایل'; return 'محتوای اینستاگرام';
+        const p=u.pathname.toLowerCase(); if(p.startsWith('/reel/')||p.startsWith('/reels/')||p.startsWith('/share/reel/')) return 'ریلز'; if(p.startsWith('/p/')||p.startsWith('/share/p/')) return 'پست / ویدئو'; if(p.startsWith('/tv/')) return 'ویدئو'; if(p.startsWith('/audio/')) return 'آهنگ'; if(p.split('/').filter(Boolean).length===1) return 'پروفایل'; return 'محتوای اینستاگرام';
       } catch { return null; }
     }
     function isDirect(url){ return /\.(mp4|webm|mov|mp3|m4a|wav|jpg|jpeg|png|webp)(\?.*)?$/i.test(url); }
@@ -58,7 +58,7 @@
       e.preventDefault(); const value=$('url').value.trim(); const type=classify(value); const direct=isDirect(value);
       $('result').style.display='block'; $('preview').style.display='none'; currentUrl=value;
       if(!type && !direct){ $('title').textContent='لینک نامعتبر است'; $('type').textContent='خطا'; $('notice').textContent='یک لینک عمومی اینستاگرام یا آدرس مستقیم فایل تصویر/ویدئو/صدا وارد کن.'; $('download').disabled=true; showStatus('نمونه معتبر: https://www.instagram.com/reel/...','error'); return; }
-      $('download').disabled=false; $('type').textContent=direct?'فایل مستقیم':type; $('title').textContent='لینک با موفقیت شناسایی شد'; $('open').style.display=direct?'none':'inline-block';
+      $('download').disabled=false; $('download').textContent=direct?'دریافت فایل':'دانلود با API'; $('type').textContent=direct?'فایل مستقیم':type; $('title').textContent='لینک با موفقیت شناسایی شد'; $('open').style.display=direct?'none':'inline-block';
       $('notice').textContent=direct?'این آدرس مستقیماً به یک فایل رسانه‌ای اشاره می‌کند و می‌تواند در مرورگر ذخیره شود.':'این فقط اعتبارسنجی سمت مرورگر است. برای تبدیل لینک اینستاگرام به فایل، یک API بک‌اند مجاز لازم است.';
       showStatus(direct?'آماده دریافت است.':'برای لینک اینستاگرام هنوز API بک‌اند تنظیم نشده است.','');
       if(direct && /\.(jpg|jpeg|png|webp)(\?.*)?$/i.test(value)){ $('preview').src=value; $('preview').style.display='block'; }
@@ -66,12 +66,12 @@
     $('download').addEventListener('click', async ()=>{
       if(!currentUrl) return;
       if(isDirect(currentUrl)){ const a=document.createElement('a'); a.href=currentUrl; a.download='downloadino-media'; a.target='_blank'; a.rel='noreferrer'; document.body.appendChild(a); a.click(); a.remove(); showStatus('دریافت شروع شد. اگر مرورگر اجازه نداد، لینک در زبانه جدید باز می‌شود.','ok'); return; }
-      if(!DOWNLOAD_API_URL){ showStatus('دانلود مستقیم لینک اینستاگرام روی GitHub Pages ممکن نیست. ابتدا API بک‌اند مجاز را در کد تنظیم کن.','error'); return; }
+      if(!DOWNLOAD_API_URL){ showStatus('این دکمه زمانی فعال می‌شود که API بک‌اند مجاز به سایت وصل شود. برای بازکردن محتوا، «بازکردن در اینستاگرام» را بزن.','error'); return; }
       showStatus('در حال آماده‌سازی فایل…'); $('download').disabled=true;
       try { const r=await fetch(DOWNLOAD_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl})}); if(!r.ok) throw new Error('API error'); const data=await r.json(); if(!data.downloadUrl) throw new Error('No file'); const a=document.createElement('a'); a.href=data.downloadUrl; a.download=data.filename||'downloadino-media'; a.target='_blank'; a.rel='noreferrer'; a.click(); showStatus('فایل آماده شد.','ok'); } catch { showStatus('API در دسترس نیست یا این محتوا قابل دریافت مجاز نیست.','error'); } finally { $('download').disabled=false; }
     });
-    $('open').addEventListener('click',()=>{ if(currentUrl) window.open(currentUrl,'_blank','noopener,noreferrer'); });
-    $('copy').addEventListener('click',async()=>{ try{await navigator.clipboard.writeText(currentUrl); showStatus('لینک کپی شد.','ok');}catch{showStatus('کپی خودکار ممکن نشد؛ لینک را دستی انتخاب کن.','error');} });
+    $('open').addEventListener('click',()=>{ if(currentUrl) window.location.href=currentUrl; });
+    $('copy').addEventListener('click',async()=>{ try{ if(navigator.clipboard&&window.isSecureContext){ await navigator.clipboard.writeText(currentUrl); } else { const box=document.createElement('textarea'); box.value=currentUrl; box.style.position='fixed'; box.style.opacity='0'; document.body.appendChild(box); box.focus(); box.select(); document.execCommand('copy'); box.remove(); } showStatus('لینک کپی شد.','ok'); }catch{ showStatus('کپی خودکار ممکن نشد؛ لینک را از کادر بالا کپی کن.','error'); $('url').focus(); $('url').select(); } });
   </script>
 </body>
 </html>
