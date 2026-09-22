@@ -3,34 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ابزار آزمایشی تحلیل لینک اینستاگرام با طراحی سه‌بعدی">
-  <title>دانلودینو | ابزار لینک اینستاگرام</title>
+  <meta name="description" content="دانلودینو؛ ابزار بررسی و دریافت لینک‌های مجاز اینستاگرام">
+  <meta name="theme-color" content="#09091a">
+  <title>دانلودینو | دریافت محتوای مجاز</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap');
-    :root{--bg:#080817;--card:#15152b;--text:#f7f7ff;--muted:#aaaaca;--pink:#ff4db8;--blue:#5c7cff;--cyan:#40e0d0}
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;800&display=swap');
+    :root{--bg:#080817;--card:#15152b;--card2:#1b1b38;--text:#f7f7ff;--muted:#aaaaca;--pink:#ff4db8;--blue:#5c7cff;--cyan:#40e0d0;--danger:#ff809f;--ok:#69e6b1}
     *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 10%,#28205b 0,transparent 32%),radial-gradient(circle at 90% 70%,#301337 0,transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
-    .orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(2px);opacity:.35;pointer-events:none;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:inset -35px -25px 65px #070713, inset 30px 25px 50px #fff5;left:8%;top:16%;transition:transform .18s ease}
+    .orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(2px);opacity:.3;pointer-events:none;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:inset -35px -25px 65px #070713,inset 30px 25px 50px #fff5;left:8%;top:16%;transition:transform .18s ease}
     .wrap{position:relative;max-width:1100px;margin:auto;padding:26px 20px 50px}.nav{display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:1.35rem}.logo b{color:var(--pink)}.badge{border:1px solid #ffffff20;border-radius:999px;padding:8px 14px;color:var(--muted);font-size:.78rem}
-    .hero{text-align:center;padding:90px 0 40px}.eyebrow{color:var(--cyan);font-weight:600}.hero h1{font-size:clamp(2.1rem,6vw,4.8rem);line-height:1.15;margin:15px auto;max-width:850px}.hero h1 span{background:linear-gradient(90deg,var(--pink),#ffb4e1,var(--cyan));-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;margin:0 auto 28px;line-height:2}
-    .search{display:flex;gap:10px;max-width:760px;margin:auto;background:#ffffff0d;border:1px solid #ffffff20;border-radius:20px;padding:10px;backdrop-filter:blur(18px);box-shadow:0 20px 70px #0006}.search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;padding:13px}.search button,.download{border:0;border-radius:14px;padding:0 22px;background:linear-gradient(135deg,var(--pink),var(--blue));color:white;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 25px #ff4db855}.search button:hover,.download:hover{transform:translateY(-2px)}
-    #result{display:none;margin:26px auto;max-width:760px;background:var(--card);border:1px solid #ffffff18;border-radius:22px;padding:22px;text-align:right}.result-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.type{color:var(--cyan)}.notice{font-size:.85rem;color:var(--muted);line-height:1.8}.download{height:45px}.ad{max-width:760px;height:90px;border:1px dashed #ffffff30;border-radius:18px;display:grid;place-items:center;color:#777797;margin:30px auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.feature{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;padding:22px}.feature h3{margin:0 0 8px}.feature p{color:var(--muted);line-height:1.8;font-size:.9rem}.footer{text-align:center;color:#777797;margin-top:60px;font-size:.8rem}@media(max-width:650px){.hero{padding-top:65px}.search{flex-direction:column}.search button{height:48px}.features{grid-template-columns:1fr}.orb{width:180px;height:180px}}
+    .hero{text-align:center;padding:78px 0 35px}.eyebrow{color:var(--cyan);font-weight:600}.hero h1{font-size:clamp(2.1rem,6vw,4.8rem);line-height:1.15;margin:15px auto;max-width:850px}.hero h1 span{background:linear-gradient(90deg,var(--pink),#ffb4e1,var(--cyan));-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:660px;margin:0 auto 28px;line-height:2}
+    .search{display:flex;gap:10px;max-width:820px;margin:auto;background:#ffffff0d;border:1px solid #ffffff20;border-radius:20px;padding:10px;backdrop-filter:blur(18px);box-shadow:0 20px 70px #0006}.search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;padding:13px;direction:ltr;text-align:left}.primary,.secondary{border:0;border-radius:14px;padding:0 22px;background:linear-gradient(135deg,var(--pink),var(--blue));color:white;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 25px #ff4db855;transition:.2s}.primary:hover,.secondary:hover{transform:translateY(-2px)}
+    #result{display:none;margin:26px auto;max-width:820px;background:var(--card);border:1px solid #ffffff18;border-radius:22px;padding:22px;text-align:right}.result-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.type{color:var(--cyan);font-size:.9rem}.notice{font-size:.9rem;color:var(--muted);line-height:2;margin:14px 0}.actions{display:flex;gap:10px;flex-wrap:wrap}.primary,.secondary{height:45px}.secondary{background:#ffffff12;box-shadow:none}.status{font-size:.88rem;line-height:1.8;margin-top:14px;color:var(--muted)}.status.error{color:var(--danger)}.status.ok{color:var(--ok)}.preview{display:none;width:100%;max-height:360px;object-fit:contain;border-radius:14px;background:#080817;margin:16px 0}
+    .ad{max-width:820px;height:90px;border:1px dashed #ffffff30;border-radius:18px;display:grid;place-items:center;color:#777797;margin:30px auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.feature{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;padding:22px}.feature h3{margin:0 0 8px}.feature p{color:var(--muted);line-height:1.8;font-size:.9rem}.footer{text-align:center;color:#777797;margin-top:60px;font-size:.8rem;line-height:2}.footer a{color:var(--cyan)}
+    @media(max-width:650px){.hero{padding-top:60px}.search{flex-direction:column}.search button{height:48px}.features{grid-template-columns:1fr}.orb{width:180px;height:180px}.result-head{align-items:flex-start;flex-direction:column}.actions>*{width:100%}}
   </style>
 </head>
 <body>
   <div class="orb" id="orb"></div>
   <main class="wrap">
-    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><div class="badge">نسخه آزمایشی ۰.۱</div></nav>
-    <section class="hero"><div class="eyebrow">سریع، ساده، مدرن</div><h1>لینک اینستاگرام را بده، <span>مرتب تحویل بگیر</span></h1><p>این نسخه برای نمایش طراحی و تجربه کاربری ساخته شده است. لینک عمومی پست، ریلز یا پروفایل را وارد کن.</p>
-      <form class="search" id="form"><input id="url" type="url" required placeholder="https://www.instagram.com/..." aria-label="آدرس اینستاگرام"><button type="submit">تحلیل لینک</button></form>
-      <div id="result"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">پیش‌نمایش آزمایشی فعال شد. دانلود واقعی فقط برای محتوای خودت یا محتوایی که اجازه دریافت آن را داری، پس از اتصال سرویس مجاز فعال می‌شود.</p><button class="download" type="button" onclick="alert('در نسخه آزمایشی دانلود واقعی فعال نیست.')">دانلود مجاز</button></div>
+    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><div class="badge">نسخه ۱.۰ · محتوای مجاز</div></nav>
+    <section class="hero">
+      <div class="eyebrow">سریع، شفاف، مسئولانه</div>
+      <h1>لینک را بده، <span>درست بررسی کن</span></h1>
+      <p>لینک عمومی پست، ریلز یا آهنگ اینستاگرام را وارد کن. این ابزار لینک را اعتبارسنجی می‌کند و برای دریافت محتوایی که مالک آن هستی یا اجازه‌اش را داری، مسیر مناسب را نشان می‌دهد.</p>
+      <form class="search" id="form" novalidate><input id="url" type="url" required placeholder="https://www.instagram.com/reel/..." aria-label="آدرس اینستاگرام"><button class="primary" type="submit">بررسی لینک</button></form>
+      <div id="result" aria-live="polite">
+        <div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div>
+        <p class="notice" id="notice"></p>
+        <img id="preview" class="preview" alt="پیش‌نمایش فایل">
+        <div class="actions"><button class="primary" id="download" type="button">دریافت فایل</button><button class="secondary" id="open" type="button">بازکردن در اینستاگرام</button><button class="secondary" id="copy" type="button">کپی لینک</button></div>
+        <div id="status" class="status"></div>
+      </div>
       <div class="ad">جایگاه تبلیغات شما</div>
     </section>
-    <section class="features"><article class="feature"><h3>طراحی سه‌بعدی</h3><p>پس‌زمینه و عناصر صفحه با حرکت موس واکنش نشان می‌دهند.</p></article><article class="feature"><h3>تشخیص لینک</h3><p>نوع لینک به‌صورت نمایشی از روی آدرس تشخیص داده می‌شود.</p></article><article class="feature"><h3>امن و مسئولانه</h3><p>پردازش آینده فقط برای محتوای مجاز و دارای اجازه انجام خواهد شد.</p></article></section>
-    <footer class="footer">© ۲۰۲۶ دانلودینو · قوانین استفاده · حریم خصوصی · گزارش محتوا</footer>
+    <section class="features"><article class="feature"><h3>تشخیص دقیق</h3><p>لینک‌های پست، ریلز، ویدئو، آهنگ و پروفایل از هم تفکیک می‌شوند و لینک‌های نامعتبر رد می‌شوند.</p></article><article class="feature"><h3>دانلود واقعیِ مجاز</h3><p>فایل مستقیم تصویر، ویدئو یا صدا در مرورگر دریافت می‌شود؛ برای لینک اینستاگرام، بک‌اند مجاز باید به این صفحه وصل شود.</p></article><article class="feature"><h3>بدون رمز عبور</h3><p>هرگز رمز اینستاگرام را وارد نکن. این سایت فقط برای محتوای عمومی و دارای اجازه استفاده است.</p></article></section>
+    <footer class="footer">© ۲۰۲۶ دانلودینو · استفاده فقط برای محتوای مجاز · <a href="https://github.com/amirrezakiyani/instagram-tool-demo" target="_blank" rel="noreferrer">کد پروژه در GitHub</a></footer>
   </main>
   <script>
-    const orb=document.getElementById('orb'); document.addEventListener('mousemove',e=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.08}px, ${(e.clientY-innerHeight/2)*.08}px)`});
-    document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const u=document.getElementById('url').value.toLowerCase();let t='محتوای اینستاگرام';if(u.includes('/reel'))t='ریلز';else if(u.includes('/p/'))t='پست';else if(u.includes('/audio'))t='آهنگ';else if(u.match(/instagram\.com\/?$/))t='پروفایل';document.getElementById('type').textContent=t;document.getElementById('title').textContent='تحلیل نمایشی با موفقیت انجام شد';document.getElementById('result').style.display='block'});
+    // برای فعال‌سازی دریافت لینک اینستاگرام، این مقدار را به آدرس API بک‌اند مجاز خود تغییر دهید.
+    // API باید POST JSON { url } بگیرد و { downloadUrl, filename, mimeType } برگرداند.
+    const DOWNLOAD_API_URL = window.DOWNLOAD_API_URL || '';
+    const $ = id => document.getElementById(id);
+    const orb=$('orb'); document.addEventListener('mousemove',e=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.08}px, ${(e.clientY-innerHeight/2)*.08}px)`});
+    let currentUrl = '';
+    function classify(url){
+      try { const u=new URL(url); if(!['instagram.com','www.instagram.com','m.instagram.com'].includes(u.hostname.toLowerCase())) return null;
+        const p=u.pathname.toLowerCase(); if(p.startsWith('/reel/')||p.startsWith('/reels/')) return 'ریلز'; if(p.startsWith('/p/')) return 'پست / ویدئو'; if(p.startsWith('/tv/')) return 'ویدئو'; if(p.startsWith('/audio/')) return 'آهنگ'; if(p.split('/').filter(Boolean).length===1) return 'پروفایل'; return 'محتوای اینستاگرام';
+      } catch { return null; }
+    }
+    function isDirect(url){ return /\.(mp4|webm|mov|mp3|m4a|wav|jpg|jpeg|png|webp)(\?.*)?$/i.test(url); }
+    function showStatus(text, kind=''){ $('status').textContent=text; $('status').className='status '+kind; }
+    $('form').addEventListener('submit', async e=>{
+      e.preventDefault(); const value=$('url').value.trim(); const type=classify(value); const direct=isDirect(value);
+      $('result').style.display='block'; $('preview').style.display='none'; currentUrl=value;
+      if(!type && !direct){ $('title').textContent='لینک نامعتبر است'; $('type').textContent='خطا'; $('notice').textContent='یک لینک عمومی اینستاگرام یا آدرس مستقیم فایل تصویر/ویدئو/صدا وارد کن.'; $('download').disabled=true; showStatus('نمونه معتبر: https://www.instagram.com/reel/...','error'); return; }
+      $('download').disabled=false; $('type').textContent=direct?'فایل مستقیم':type; $('title').textContent='لینک با موفقیت شناسایی شد'; $('open').style.display=direct?'none':'inline-block';
+      $('notice').textContent=direct?'این آدرس مستقیماً به یک فایل رسانه‌ای اشاره می‌کند و می‌تواند در مرورگر ذخیره شود.':'این فقط اعتبارسنجی سمت مرورگر است. برای تبدیل لینک اینستاگرام به فایل، یک API بک‌اند مجاز لازم است.';
+      showStatus(direct?'آماده دریافت است.':'برای لینک اینستاگرام هنوز API بک‌اند تنظیم نشده است.','');
+      if(direct && /\.(jpg|jpeg|png|webp)(\?.*)?$/i.test(value)){ $('preview').src=value; $('preview').style.display='block'; }
+    });
+    $('download').addEventListener('click', async ()=>{
+      if(!currentUrl) return;
+      if(isDirect(currentUrl)){ const a=document.createElement('a'); a.href=currentUrl; a.download='downloadino-media'; a.target='_blank'; a.rel='noreferrer'; document.body.appendChild(a); a.click(); a.remove(); showStatus('دریافت شروع شد. اگر مرورگر اجازه نداد، لینک در زبانه جدید باز می‌شود.','ok'); return; }
+      if(!DOWNLOAD_API_URL){ showStatus('دانلود مستقیم لینک اینستاگرام روی GitHub Pages ممکن نیست. ابتدا API بک‌اند مجاز را در کد تنظیم کن.','error'); return; }
+      showStatus('در حال آماده‌سازی فایل…'); $('download').disabled=true;
+      try { const r=await fetch(DOWNLOAD_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl})}); if(!r.ok) throw new Error('API error'); const data=await r.json(); if(!data.downloadUrl) throw new Error('No file'); const a=document.createElement('a'); a.href=data.downloadUrl; a.download=data.filename||'downloadino-media'; a.target='_blank'; a.rel='noreferrer'; a.click(); showStatus('فایل آماده شد.','ok'); } catch { showStatus('API در دسترس نیست یا این محتوا قابل دریافت مجاز نیست.','error'); } finally { $('download').disabled=false; }
+    });
+    $('open').addEventListener('click',()=>{ if(currentUrl) window.open(currentUrl,'_blank','noopener,noreferrer'); });
+    $('copy').addEventListener('click',async()=>{ try{await navigator.clipboard.writeText(currentUrl); showStatus('لینک کپی شد.','ok');}catch{showStatus('کپی خودکار ممکن نشد؛ لینک را دستی انتخاب کن.','error');} });
   </script>
 </body>
 </html>
