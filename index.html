@@ -32,7 +32,7 @@
         <div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div>
         <p class="notice" id="notice"></p>
         <img id="preview" class="preview" alt="پیش‌نمایش فایل">
-        <div class="actions"><button class="primary" id="download" type="button">دریافت فایل</button><button class="secondary" id="open" type="button">بازکردن در اینستاگرام</button><button class="secondary" id="copy" type="button">کپی لینک</button></div>
+        <div class="actions"><select id="kind" class="secondary" aria-label="نوع فایل"><option value="video">ویدیو</option><option value="photo">عکس</option><option value="audio">موسیقی / MP3</option></select><button class="primary" id="download" type="button">دریافت فایل</button><button class="secondary" id="open" type="button">بازکردن در اینستاگرام</button><button class="secondary" id="copy" type="button">کپی لینک</button></div>
         <div id="status" class="status"></div>
       </div>
       <div class="ad">جایگاه تبلیغات شما</div>
@@ -43,7 +43,7 @@
   <script>
     // برای فعال‌سازی دریافت لینک اینستاگرام، این مقدار را به آدرس API بک‌اند مجاز خود تغییر دهید.
     // API باید POST JSON { url } بگیرد و { downloadUrl, filename, mimeType } برگرداند.
-    const DOWNLOAD_API_URL = window.DOWNLOAD_API_URL || '';
+    const DOWNLOAD_API_URL = window.DOWNLOAD_API_URL || 'https://8000-iv54n61zzo2l7jayeit3w-23209c66.us4.manus.computer/api/download';
     const $ = id => document.getElementById(id);
     const orb=$('orb'); document.addEventListener('mousemove',e=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.08}px, ${(e.clientY-innerHeight/2)*.08}px)`});
     let currentUrl = '';
@@ -68,7 +68,7 @@
       if(isDirect(currentUrl)){ const a=document.createElement('a'); a.href=currentUrl; a.download='downloadino-media'; a.target='_blank'; a.rel='noreferrer'; document.body.appendChild(a); a.click(); a.remove(); showStatus('دریافت شروع شد. اگر مرورگر اجازه نداد، لینک در زبانه جدید باز می‌شود.','ok'); return; }
       if(!DOWNLOAD_API_URL){ showStatus('این دکمه زمانی فعال می‌شود که API بک‌اند مجاز به سایت وصل شود. برای بازکردن محتوا، «بازکردن در اینستاگرام» را بزن.','error'); return; }
       showStatus('در حال آماده‌سازی فایل…'); $('download').disabled=true;
-      try { const r=await fetch(DOWNLOAD_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl})}); if(!r.ok) throw new Error('API error'); const data=await r.json(); if(!data.downloadUrl) throw new Error('No file'); const a=document.createElement('a'); a.href=data.downloadUrl; a.download=data.filename||'downloadino-media'; a.target='_blank'; a.rel='noreferrer'; a.click(); showStatus('فایل آماده شد.','ok'); } catch { showStatus('API در دسترس نیست یا این محتوا قابل دریافت مجاز نیست.','error'); } finally { $('download').disabled=false; }
+      try { const r=await fetch(DOWNLOAD_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl,kind:$('kind').value})}); if(!r.ok) { let message='API در دسترس نیست یا این محتوا قابل دریافت مجاز نیست.'; try { const err=await r.json(); message=err.error||message; } catch {} throw new Error(message); } const blob=await r.blob(); const disposition=r.headers.get('Content-Disposition')||''; const match=disposition.match(/filename="?([^";]+)"?/i); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=match?decodeURIComponent(match[1]):'downloadino-media'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); showStatus('فایل آماده شد و دانلود شروع شد.','ok'); } catch (err) { showStatus(err.message||'API در دسترس نیست یا این محتوا قابل دریافت مجاز نیست.','error'); } finally { $('download').disabled=false; }
     });
     $('open').addEventListener('click',()=>{ if(currentUrl) window.location.href=currentUrl; });
     $('copy').addEventListener('click',async()=>{ try{ if(navigator.clipboard&&window.isSecureContext){ await navigator.clipboard.writeText(currentUrl); } else { const box=document.createElement('textarea'); box.value=currentUrl; box.style.position='fixed'; box.style.opacity='0'; document.body.appendChild(box); box.focus(); box.select(); document.execCommand('copy'); box.remove(); } showStatus('لینک کپی شد.','ok'); }catch{ showStatus('کپی خودکار ممکن نشد؛ لینک را از کادر بالا کپی کن.','error'); $('url').focus(); $('url').select(); } });
