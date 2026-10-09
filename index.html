@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ابزار آزمایشی تحلیل لینک اینستاگرام با طراحی سه‌بعدی">
-
+  <meta name="description" content="دانلود ویدیو، عکس یا صدا از پست‌های عمومی اینستاگرام؛ فقط برای محتوایی که مالک آن هستید یا اجازهٔ دریافتش را دارید.">
   <meta name="author" content="دانلودینو">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#080817">
@@ -12,12 +11,12 @@
   <meta property="og:locale" content="fa_IR">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="دانلودینو">
-  <meta property="og:title" content="دانلودینو | ابزار آزمایشی لینک اینستاگرام">
-  <meta property="og:description" content="ابزار آزمایشی تشخیص لینک پست، ریلز و پروفایل اینستاگرام با طراحی مدرن و سریع.">
+  <meta property="og:title" content="دانلودینو | دریافت محتوای عمومی اینستاگرام">
+  <meta property="og:description" content="دریافت ویدیو، عکس یا صدا از یک پست عمومی اینستاگرام، با رعایت حقوق صاحب محتوا.">
   <meta property="og:url" content="https://amirrezakiyani.github.io/instagram-tool-demo/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="دانلودینو | ابزار آزمایشی لینک اینستاگرام">
-  <meta name="twitter:description" content="تشخیص نمایشی لینک پست، ریلز و پروفایل اینستاگرام؛ فقط برای محتوای مجاز.">
+  <meta name="twitter:title" content="دانلودینو | دریافت محتوای عمومی اینستاگرام">
+  <meta name="twitter:description" content="فقط برای پست‌های عمومی و محتوایی که مجاز به دریافتش هستید.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,36 +26,154 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Web",
     "inLanguage": "fa-IR",
-    "description": "ابزار آزمایشی تشخیص لینک محتوای عمومی اینستاگرام."
+    "description": "ابزار دریافت فایل از پست‌های عمومی اینستاگرام با رعایت حقوق صاحب محتوا."
   }
   </script>
-  <title>دانلودینو | ابزار لینک اینستاگرام</title>
+  <title>دانلودینو | دریافت محتوای عمومی اینستاگرام</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap');
     :root{--bg:#080817;--card:#15152b;--text:#f7f7ff;--muted:#aaaaca;--pink:#ff4db8;--blue:#5c7cff;--cyan:#40e0d0}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 10%,#28205b 0,transparent 32%),radial-gradient(circle at 90% 70%,#301337 0,transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
-    .orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(2px);opacity:.35;pointer-events:none;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:inset -35px -25px 65px #070713, inset 30px 25px 50px #fff5;left:8%;top:16%;transition:transform .18s ease}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at 20% 10%,#28205b 0,transparent 32%),radial-gradient(circle at 90% 70%,#301337 0,transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+    .orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(2px);opacity:.35;pointer-events:none;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:inset -35px -25px 65px #070713,inset 30px 25px 50px #fff5;left:8%;top:16%;transition:transform .18s ease}
     .wrap{position:relative;max-width:1100px;margin:auto;padding:26px 20px 50px}.nav{display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:1.35rem}.logo b{color:var(--pink)}.badge{border:1px solid #ffffff20;border-radius:999px;padding:8px 14px;color:var(--muted);font-size:.78rem}
-    .hero{text-align:center;padding:90px 0 40px}.eyebrow{color:var(--cyan);font-weight:600}.hero h1{font-size:clamp(2.1rem,6vw,4.8rem);line-height:1.15;margin:15px auto;max-width:850px}.hero h1 span{background:linear-gradient(90deg,var(--pink),#ffb4e1,var(--cyan));-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;margin:0 auto 28px;line-height:2}
-    .search{display:flex;gap:10px;max-width:760px;margin:auto;background:#ffffff0d;border:1px solid #ffffff20;border-radius:20px;padding:10px;backdrop-filter:blur(18px);box-shadow:0 20px 70px #0006}.search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;padding:13px}.search button,.download{border:0;border-radius:14px;padding:0 22px;background:linear-gradient(135deg,var(--pink),var(--blue));color:white;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 25px #ff4db855}.search button:hover,.download:hover{transform:translateY(-2px)}.download:disabled{opacity:.65;cursor:not-allowed;transform:none}
-    #result{display:none;margin:26px auto;max-width:760px;background:var(--card);border:1px solid #ffffff18;border-radius:22px;padding:22px;text-align:right}.result-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.type{color:var(--cyan)}.notice{font-size:.85rem;color:var(--muted);line-height:1.8}.download{height:45px}.ad{max-width:760px;height:90px;border:1px dashed #ffffff30;border-radius:18px;display:grid;place-items:center;color:#777797;margin:30px auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.feature{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;padding:22px}.feature h3{margin:0 0 8px}.feature p{color:var(--muted);line-height:1.8;font-size:.9rem}.footer{text-align:center;color:#777797;margin-top:60px;font-size:.8rem}@media(max-width:650px){.hero{padding-top:65px}.search{flex-direction:column}.search button{height:48px}.features{grid-template-columns:1fr}.orb{width:180px;height:180px}}
+    .hero{text-align:center;padding:90px 0 40px}.eyebrow{color:var(--cyan);font-weight:600}.hero h1{font-size:clamp(2.1rem,6vw,4.8rem);line-height:1.15;margin:15px auto;max-width:850px}.hero h1 span{background:linear-gradient(90deg,var(--pink),#ffb4e1,var(--cyan));-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:700px;margin:0 auto 28px;line-height:2}
+    .search{display:flex;flex-wrap:wrap;gap:10px;max-width:820px;margin:auto;background:#ffffff0d;border:1px solid #ffffff20;border-radius:20px;padding:10px;backdrop-filter:blur(18px);box-shadow:0 20px 70px #0006}.search #url{flex:1;min-width:220px;background:transparent;border:0;outline:0;color:#fff;font:inherit;padding:13px}.search #url::placeholder{color:#aaaaca}.search select{width:145px;background:#15152b;border:1px solid #ffffff25;border-radius:14px;color:#fff;font:inherit;padding:0 12px}.search button{border:0;border-radius:14px;padding:0 22px;background:linear-gradient(135deg,var(--pink),var(--blue));color:white;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 25px #ff4db855;min-height:48px}.search button:hover{transform:translateY(-2px)}.search button:disabled{opacity:.65;cursor:wait;transform:none}
+    .consent{display:flex;align-items:flex-start;gap:10px;flex:1 0 100%;text-align:right;color:var(--muted);font-size:.84rem;line-height:1.8;padding:4px 10px 2px;cursor:pointer}.consent input{flex:0 0 auto;width:18px;height:18px;accent-color:var(--pink);margin:4px 0 0}
+    #result{display:none;margin:26px auto;max-width:820px;background:var(--card);border:1px solid #ffffff18;border-radius:22px;padding:22px;text-align:right}.result-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.type{color:var(--cyan)}.notice{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:0}.ad{max-width:760px;height:90px;border:1px dashed #ffffff30;border-radius:18px;display:grid;place-items:center;color:#777797;margin:30px auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.feature{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;padding:22px}.feature h3{margin:0 0 8px}.feature p{color:var(--muted);line-height:1.8;font-size:.9rem}.footer{text-align:center;color:#aaaaca;margin-top:60px;font-size:.8rem;line-height:1.9}
+    @media(max-width:650px){.hero{padding-top:65px}.search{flex-direction:column}.search #url,.search select,.search button{width:100%;min-height:48px}.search #url{min-width:0}.features{grid-template-columns:1fr}.orb{width:180px;height:180px}.result-head{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
-  <div class="orb" id="orb"></div>
+  <div class="orb" id="orb" aria-hidden="true"></div>
   <main class="wrap">
-    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><div class="badge">نسخه آزمایشی ۰.۱</div></nav>
-    <section class="hero"><div class="eyebrow">سریع، ساده، مدرن</div><h1>لینک اینستاگرام را بده، <span>مرتب تحویل بگیر</span></h1><p>این نسخه برای نمایش طراحی و تجربه کاربری ساخته شده است. لینک عمومی پست، ریلز یا پروفایل را وارد کن.</p>
-      <form class="search" id="form"><input id="url" type="url" required placeholder="https://www.instagram.com/..." aria-label="آدرس اینستاگرام"><button type="submit">تحلیل لینک</button></form>
-      <div id="result"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">پیش‌نمایش آزمایشی فعال شد. دانلود واقعی فقط برای محتوای خودت یا محتوایی که اجازه دریافت آن را داری، پس از اتصال سرویس مجاز فعال می‌شود.</p><button class="download" type="button" disabled aria-disabled="true">دانلود واقعی در نسخهٔ آزمایشی غیرفعال است</button></div>
-
+    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><div class="badge">فقط محتوای عمومی و مجاز</div></nav>
+    <section class="hero">
+      <div class="eyebrow">سریع، ساده، مسئولانه</div>
+      <h1>محتوای مجاز را <span>آمادهٔ دریافت کن</span></h1>
+      <p>لینک عمومی یک پست یا ریل اینستاگرام را وارد کن و نوع فایل را انتخاب کن. برای پروفایل‌ها و محتوای خصوصی طراحی نشده است.</p>
+      <form class="search" id="form">
+        <input id="url" type="url" required placeholder="https://www.instagram.com/p/..." aria-label="آدرس پست عمومی اینستاگرام">
+        <select id="kind" aria-label="نوع فایل">
+          <option value="video">ویدیو</option>
+          <option value="photo">عکس</option>
+          <option value="audio">صدا (MP3)</option>
+        </select>
+        <button id="submitBtn" type="submit">دریافت فایل</button>
+        <label class="consent"><input id="rights" type="checkbox" required><span>تأیید می‌کنم مالک این محتوا هستم یا اجازهٔ دریافت آن را دارم.</span></label>
+      </form>
+      <div id="result" aria-live="polite" role="status">
+        <div class="result-head"><strong id="title">آماده</strong><span class="type" id="type">محتوای اینستاگرام</span></div>
+        <p class="notice" id="notice">فقط برای محتوای عمومی و مجاز استفاده کنید.</p>
+      </div>
     </section>
-    <section class="features"><article class="feature"><h3>طراحی سه‌بعدی</h3><p>پس‌زمینه و عناصر صفحه با حرکت موس واکنش نشان می‌دهند.</p></article><article class="feature"><h3>تشخیص لینک</h3><p>نوع لینک به‌صورت نمایشی از روی آدرس تشخیص داده می‌شود.</p></article><article class="feature"><h3>امن و مسئولانه</h3><p>پردازش آینده فقط برای محتوای مجاز و دارای اجازه انجام خواهد شد.</p></article></section>
-    <footer class="footer">© ۲۰۲۶ دانلودینو · نسخهٔ آزمایشی؛ دانلود واقعی فعال نیست</footer>
+    <section class="features">
+      <article class="feature"><h3>ویدیو، عکس یا صدا</h3><p>نوع خروجی را پیش از درخواست انتخاب کنید.</p></article>
+      <article class="feature"><h3>فقط یک پست عمومی</h3><p>لینک پست، ریل یا TV عمومی پذیرفته می‌شود؛ پروفایل و محتوای خصوصی پشتیبانی نمی‌شود.</p></article>
+      <article class="feature"><h3>با رعایت حقوق</h3><p>برای دریافت محتوایی که متعلق به شماست یا مجوز دریافتش را دارید، تأیید صریح لازم است.</p></article>
+    </section>
+    <footer class="footer">© ۲۰۲۶ دانلودینو · فایل‌ها به‌صورت موقت پردازش می‌شوند و روی سرویس ذخیرهٔ دائمی نمی‌شوند.<br>درخواست نخست پس از بی‌کاری ممکن است برای بیدارشدن سرویس کمی بیشتر طول بکشد.</footer>
   </main>
   <script>
-    const orb=document.getElementById('orb'); document.addEventListener('mousemove',e=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.08}px, ${(e.clientY-innerHeight/2)*.08}px)`});
-    document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const raw=document.getElementById('url').value;let parsed;try{parsed=new URL(raw)}catch(_){return}const host=parsed.hostname.toLowerCase();const ok=host==='instagram.com'||host.endsWith('.instagram.com');const result=document.getElementById('result');const title=document.getElementById('title');const type=document.getElementById('type');const notice=document.querySelector('.notice');if(!ok){title.textContent='نشانی اینستاگرام معتبر نیست';type.textContent='دامنهٔ نامعتبر';notice.textContent='فقط نشانی‌های دامنهٔ instagram.com پذیرفته می‌شوند؛ این صفحه صرفاً نسخهٔ نمایشی است.';result.style.display='block';return}const u=parsed.pathname.toLowerCase();let t='محتوای اینستاگرام';if(u.includes('/reel/'))t='ریلز';else if(u.includes('/p/'))t='پست';else if(u.includes('/audio/'))t='آهنگ';else if(/^\/[^/]+\/?$/.test(u))t='پروفایل';type.textContent=t;title.textContent='تشخیص نمایشی انجام شد؛ دریافت واقعی فعال نیست';notice.textContent='نوع لینک فقط از روی نشانی تشخیص داده شد؛ هیچ محتوایی دریافت یا دانلود نشد.';result.style.display='block'});
+    const API_BASE = "https://dlapi-mhpgniyz.manus.space";
+    const orb = document.getElementById('orb');
+    document.addEventListener('mousemove', e => {
+      orb.style.transform = `translate(${(e.clientX - innerWidth / 2) * .08}px, ${(e.clientY - innerHeight / 2) * .08}px)`;
+    });
+    const form = document.getElementById('form');
+    const urlInput = document.getElementById('url');
+    const kindInput = document.getElementById('kind');
+    const rightsInput = document.getElementById('rights');
+    const submitButton = document.getElementById('submitBtn');
+    const result = document.getElementById('result');
+    const title = document.getElementById('title');
+    const type = document.getElementById('type');
+    const notice = document.getElementById('notice');
+    const instagramHosts = new Set(['instagram.com', 'www.instagram.com', 'm.instagram.com']);
+    const postKinds = new Set(['p', 'reel', 'tv']);
+
+    function showMessage(heading, label, message) {
+      title.textContent = heading;
+      type.textContent = label;
+      notice.textContent = message;
+      result.style.display = 'block';
+    }
+
+    function validPostUrl(raw) {
+      try {
+        const parsed = new URL(raw);
+        const parts = parsed.pathname.split('/').filter(Boolean);
+        return ['https:', 'http:'].includes(parsed.protocol) && !parsed.username && !parsed.password &&
+          instagramHosts.has(parsed.hostname.toLowerCase()) && parts.length >= 2 && postKinds.has(parts[0].toLowerCase());
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function filenameFromHeader(header, fallback) {
+      if (!header) return fallback;
+      const encoded = header.match(/filename\*=UTF-8''([^;]+)/i);
+      if (encoded) {
+        try { return decodeURIComponent(encoded[1].replace(/^['"]|['"]$/g, '')); } catch (_) { /* fallback below */ }
+      }
+      const plain = header.match(/filename="?([^";]+)"?/i);
+      return plain ? plain[1] : fallback;
+    }
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const raw = urlInput.value.trim();
+      const kind = kindInput.value;
+      if (!validPostUrl(raw)) {
+        showMessage('لینک معتبر نیست', 'فقط پست عمومی', 'یک لینک عمومی از /p/، /reel/ یا /tv/ وارد کنید؛ لینک پروفایل پذیرفته نمی‌شود.');
+        return;
+      }
+      if (!rightsInput.checked) {
+        showMessage('تأیید لازم است', 'رعایت حقوق', 'برای ادامه باید مالکیت محتوا یا اجازهٔ دریافت آن را تأیید کنید.');
+        return;
+      }
+      if (API_BASE.startsWith('__PENDING')) {
+        showMessage('سرویس در حال آماده‌سازی است', 'کمی بعد تلاش کنید', 'اتصال سرویس هنوز کامل نشده است.');
+        return;
+      }
+
+      const labels = {video: 'ویدیو', photo: 'عکس', audio: 'صدا (MP3)'};
+      submitButton.disabled = true;
+      submitButton.textContent = 'در حال دریافت…';
+      showMessage('درخواست ثبت شد', labels[kind], 'در حال پردازش لینک؛ درخواست نخست ممکن است برای بیدارشدن سرویس کمی بیشتر طول بکشد.');
+      try {
+        const response = await fetch(`${API_BASE}/api/download`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({url: raw, kind, rights_confirmed: true})
+        });
+        if (!response.ok) {
+          const body = await response.json().catch(() => ({}));
+          throw new Error(body.error || 'دریافت فایل انجام نشد. لینک را بررسی کنید و دوباره تلاش کنید.');
+        }
+        const blob = await response.blob();
+        if (!blob.size || blob.size > 100 * 1024 * 1024) throw new Error('اندازهٔ فایل خالی یا بیش از سقف ۱۰۰ مگابایت است.');
+        const extension = kind === 'audio' ? 'mp3' : kind === 'photo' ? 'jpg' : 'mp4';
+        const filename = filenameFromHeader(response.headers.get('Content-Disposition'), `downloadino.${extension}`);
+        const objectUrl = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = objectUrl;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(objectUrl), 15000);
+        showMessage('فایل آماده شد', labels[kind], 'دانلود در مرورگر آغاز شد. فقط از فایل‌های مجاز استفاده کنید.');
+      } catch (error) {
+        const message = error instanceof TypeError
+          ? 'ارتباط با سرویس برقرار نشد؛ اگر نخستین درخواست است، چند ثانیه برای بیدارشدن سرویس صبر کنید و دوباره تلاش کنید.'
+          : error.message;
+        showMessage('دریافت انجام نشد', 'نیاز به بررسی', message);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'دریافت فایل';
+      }
+    });
   </script>
 </body>
 </html>
