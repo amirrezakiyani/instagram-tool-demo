@@ -31,8 +31,11 @@
   }
   </script>
   <title>دانلودینو | ابزار لینک اینستاگرام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap');
+
     :root{--bg:#080817;--card:#15152b;--text:#f7f7ff;--muted:#aaaaca;--pink:#ff4db8;--blue:#5c7cff;--cyan:#40e0d0}
     *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 10%,#28205b 0,transparent 32%),radial-gradient(circle at 90% 70%,#301337 0,transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
     .orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(2px);opacity:.35;pointer-events:none;background:linear-gradient(135deg,var(--pink),var(--blue));box-shadow:inset -35px -25px 65px #070713, inset 30px 25px 50px #fff5;left:8%;top:16%;transition:transform .18s ease}
@@ -91,10 +94,44 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
     <footer class="footer">© ۲۰۲۶ دانلودینو · نسخهٔ آزمایشی؛ دانلود واقعی فعال نیست</footer>
   </main>
   <script>
-    const orb=document.getElementById('orb'); document.addEventListener('mousemove',e=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.08}px, ${(e.clientY-innerHeight/2)*.08}px)`});
+    const orb=document.getElementById('orb'); const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches; let pointerFrame=0; if(orb&&!reduceMotion){document.addEventListener('pointermove',e=>{if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.06}px, ${(e.clientY-innerHeight/2)*.06}px)`;pointerFrame=0})},{passive:true})}
     document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const raw=document.getElementById('url').value;let parsed;try{parsed=new URL(raw)}catch(_){return}const host=parsed.hostname.toLowerCase();const ok=host==='instagram.com'||host.endsWith('.instagram.com');const result=document.getElementById('result');const title=document.getElementById('title');const type=document.getElementById('type');const notice=document.querySelector('.notice');if(!ok){title.textContent='نشانی اینستاگرام معتبر نیست';type.textContent='دامنهٔ نامعتبر';notice.textContent='فقط نشانی‌های دامنهٔ instagram.com پذیرفته می‌شوند؛ این صفحه صرفاً نسخهٔ نمایشی است.';result.style.display='block';return}const u=parsed.pathname.toLowerCase();let t='محتوای اینستاگرام';if(u.includes('/reel/'))t='ریلز';else if(u.includes('/p/'))t='پست';else if(u.includes('/audio/'))t='آهنگ';else if(/^\/[^/]+\/?$/.test(u))t='پروفایل';type.textContent=t;title.textContent='تشخیص نمایشی انجام شد؛ دریافت واقعی فعال نیست';notice.textContent='نوع لینک فقط از روی نشانی تشخیص داده شد؛ هیچ محتوایی دریافت یا دانلود نشد.';result.style.display='block'});
   </script>
 
 <section id="owner-contact" dir="rtl" aria-label="تماس و تبلیغات" style="margin:40px auto 20px;padding:24px;max-width:1000px;border:1px solid #ffffff26;border-radius:24px;background:linear-gradient(135deg,#14213d,#202b48);color:#fff;box-shadow:0 18px 45px #0002;text-align:center"><p style="margin:0 0 8px;opacity:.8">همکاری، تبلیغات و پیشنهادها</p><h2 style="margin:0 0 10px">امیررضا کیانی</h2><p style="margin:0 0 16px">برای تبلیغات، همکاری تجاری و پشتیبانی با من در تماس باشید.</p><p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0"><a style="color:#fff;font-weight:700" href="mailto:amirreki.5685@gmail.com">amirreki.5685@gmail.com</a><a style="color:#fff;font-weight:700" href="tel:09034153445">09034153445</a></p></section>
+
+<style id="downloadino-premium-polish">
+:root{--bg:#070712;--card:#101426;--text:#f7f6ff;--muted:#a8b1d0;--pink:#ff5ac8;--blue:#7c8dff;--cyan:#5ef4df}
+body{background:radial-gradient(ellipse at 14% 4%,#48227c55,transparent 34%),radial-gradient(ellipse at 88% 26%,#0e749055,transparent 31%),linear-gradient(145deg,#070712,#0a1020 55%,#180b20);background-attachment:fixed}
+.orb{width:clamp(190px,26vw,320px);height:clamp(190px,26vw,320px);background:radial-gradient(circle at 28% 24%,#ffffffaa 0 2%,#ffb6eb 7%,#ff5ac8 24%,#765cff 55%,#10152e 79%);box-shadow:inset -35px -35px 65px #02020b99,inset 22px 18px 35px #ffffff33,0 0 90px #a855f744;will-change:transform}
+.wrap{max-width:1160px}
+.nav{padding-block:22px;border-bottom:1px solid #b8c5ff1a}
+.logo{letter-spacing:-.03em}
+.badge{background:#ffffff07;border-color:#ffffff20;backdrop-filter:blur(12px);color:#c5c9e1}
+.hero{padding:clamp(60px,8vw,100px) 0 48px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #5ef4df35;border-radius:999px;background:#5ef4df09}
+.hero h1{font-size:clamp(2.2rem,6.3vw,5.1rem);letter-spacing:-.045em;line-height:1.25;text-wrap:balance}
+.hero h1 span{background:linear-gradient(100deg,#ff92d9,#b2a7ff 52%,#5ef4df);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#b7c1de;max-width:660px}
+.search{position:relative;border-radius:22px;background:linear-gradient(145deg,#ffffff11,#ffffff04);border-color:#b8c5ff2b;box-shadow:0 26px 75px #0008,inset 0 1px #ffffff10}
+.search:focus-within{border-color:#5ef4df88;box-shadow:0 0 0 4px #5ef4df12,0 26px 75px #0008}
+.search input{min-height:52px}
+.search button,.download{min-height:50px;border-radius:15px;background:linear-gradient(120deg,#ff5ac8,#8b7bff 60%,#5ef4df);color:#0b0b18;font-weight:800;box-shadow:0 12px 28px #a855f733;transition:transform .22s,box-shadow .22s}
+.search button:hover,.download:hover{transform:translateY(-2px);box-shadow:0 18px 36px #a855f744}
+.features{gap:18px}
+.features .feature{position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#151b32ee,#0d1325ee);border:1px solid #b8c5ff20;box-shadow:0 18px 48px #0005,inset 0 1px #ffffff0b;transition:transform .25s,border-color .25s,box-shadow .25s}
+.features .feature:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff5ac8,#8b7bff,#5ef4df);opacity:.72}
+.features .feature:hover{transform:translateY(-7px);border-color:#5ef4df55;box-shadow:0 26px 55px #0007,0 0 28px #5ef4df0b}
+.features .feature h3{color:#f7f6ff}
+.features .feature p{color:#aeb8d7}
+.result{border:1px solid #5ef4df35!important;border-radius:22px!important;background:radial-gradient(ellipse at 90% 0%,#5ef4df12,transparent 45%),linear-gradient(145deg,#121d32,#0c1324)!important;box-shadow:0 25px 65px #0007!important}
+.notice{border-radius:14px}
+footer{border-top:1px solid #b8c5ff1a!important;color:#8e9aba!important}
+#owner-contact{background:radial-gradient(ellipse at 12% 0%,#ff5ac822,transparent 45%),linear-gradient(135deg,#11172d,#15122c 60%,#0c2430)!important;border-color:#b8c5ff24!important;box-shadow:0 24px 60px #0007!important}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #5ef4df;outline-offset:4px}
+@media(max-width:720px){.hero{padding-top:54px}.search{padding:8px}.features .feature{border-radius:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orb{transition:none!important}.features .feature,.search button,.download{transition:none!important}.features .feature:hover{transform:none}}
+</style>
+
 </body>
 </html>
