@@ -45,6 +45,31 @@
     #result{display:none;margin:26px auto;max-width:820px;background:var(--card);border:1px solid #ffffff18;border-radius:22px;padding:22px;text-align:right}.result-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.type{color:var(--cyan)}.notice{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:0}.ad{max-width:760px;height:90px;border:1px dashed #ffffff30;border-radius:18px;display:grid;place-items:center;color:#777797;margin:30px auto}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}.feature{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;padding:22px}.feature h3{margin:0 0 8px}.feature p{color:var(--muted);line-height:1.8;font-size:.9rem}.footer{text-align:center;color:#aaaaca;margin-top:60px;font-size:.8rem;line-height:1.9}
     @media(max-width:650px){.hero{padding-top:65px}.search{flex-direction:column}.search #url,.search select,.search button{width:100%;min-height:48px}.search #url{min-width:0}.features{grid-template-columns:1fr}.orb{width:180px;height:180px}.result-head{align-items:flex-start;flex-direction:column}}
   </style>
+
+<style id="owner-visual-polish">
+/* Shared responsive depth, glass surfaces, and accessible micro-interactions */
+:where(.service-card,.service-box,.service-item,.feature-card,.feature,.project,.project-card,.contact-card,.skill-card,.stat-card,.product-card,.product,.price-card,.panel,.profile-card,.glass-card,.card,.service,.portfolio-item){
+  transform-style:preserve-3d;
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,filter .24s ease;
+  backface-visibility:hidden;
+}
+:where(.service-card,.service-box,.service-item,.feature-card,.feature,.project,.project-card,.contact-card,.skill-card,.stat-card,.product-card,.product,.price-card,.panel,.profile-card,.glass-card,.card,.service,.portfolio-item):hover{
+  transform:perspective(1000px) translateY(-5px) rotateX(1deg);
+  box-shadow:0 18px 42px rgba(42,78,139,.14);
+}
+:where(button,.btn,.button,[role="button"],.navlinks a,.nav-list a){
+  transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease;
+}
+:where(button,.btn,.button,[role="button"]):hover{filter:saturate(1.08)}
+:where(a,button,input,select,textarea):focus-visible{outline-offset:3px}
+@media(max-width:620px){
+ :where(.service-card,.service-box,.service-item,.feature-card,.feature,.project,.project-card,.contact-card,.skill-card,.stat-card,.product-card,.product,.price-card,.panel,.profile-card,.glass-card,.card,.service,.portfolio-item):hover{transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:reduce){
+ :where(.service-card,.service-box,.service-item,.feature-card,.feature,.project,.project-card,.contact-card,.skill-card,.stat-card,.product-card,.product,.price-card,.panel,.profile-card,.glass-card,.card,.service,.portfolio-item,button,.btn,.button,[role="button"],.navlinks a,.nav-list a){transition:none!important}
+}
+</style>
+
 </head>
 <body>
   <div class="orb" id="orb" aria-hidden="true"></div>
