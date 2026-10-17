@@ -13,6 +13,30 @@ export default {
       headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }
     });
 
+    // If the yt-dlp service URL is configured as a Pages environment variable,
+    // proxy the real file stream through this same-origin endpoint.
+    if (env.DOWNLOADER_API_URL) {
+      try {
+        const upstreamBase = String(env.DOWNLOADER_API_URL).replace(/\\/+$/, "");
+        const upstream = await fetch(upstreamBase + "/api/download", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "video/mp4, application/json" },
+          body: await request.clone().text(),
+          signal: AbortSignal.timeout(120000)
+        });
+        const headers = new Headers();
+        for (const name of ["Content-Type", "Content-Disposition", "Cache-Control", "Content-Length", "X-Content-Type-Options"]) {
+          const value = upstream.headers.get(name);
+          if (value) headers.set(name, value);
+        }
+        if (!headers.has("Content-Type")) headers.set("Content-Type", "application/json; charset=utf-8");
+        headers.set("Cache-Control", "no-store");
+        return new Response(upstream.body, { status: upstream.status, headers });
+      } catch (_) {
+        return json({ error: "The download service is temporarily unavailable. Please try again shortly." }, 502);
+      }
+    }
+
     try {
       const body = await request.json();
       const source = new URL(String(body?.url || ""));
