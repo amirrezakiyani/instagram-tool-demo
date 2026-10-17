@@ -80,17 +80,70 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.features .feature,.search button{transition:none}}
 </style>
 <style id="owner-live-visual-upgrade">:root{--downloadino-refresh-v2:1}body{font-family:Vazirmatn,Tahoma,sans-serif;background:radial-gradient(ellipse at 12% 12%,#3c236a99,transparent 38%),radial-gradient(ellipse at 88% 32%,#143f6c88,transparent 36%),linear-gradient(145deg,#070714,#10152d 55%,#1c102b);color:#f8f7ff}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #42e8d4;outline-offset:4px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}</style>
+<style id="downloadino-rainbow-redesign">
+:root{--night:#090a20;--glass:#17152f;--white:#fbfaff;--muted:#c3c1df;--r1:#ff5577;--r2:#ff9b54;--r3:#ffe66d;--r4:#69edb5;--r5:#54dfff;--r6:#7f8cff;--r7:#e879f9}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:radial-gradient(ellipse at 12% 10%,#ff557726,transparent 27%),radial-gradient(ellipse at 88% 14%,#7f8cff2c,transparent 29%),radial-gradient(ellipse at 72% 78%,#54dfff1b,transparent 28%),linear-gradient(145deg,#08091a 0%,#10102b 48%,#1c1030 100%);color:var(--white);font-family:Vazirmatn,Tahoma,sans-serif}
+body:before{opacity:.12;background-size:28px 28px}
+.orb{width:clamp(180px,27vw,300px);height:clamp(180px,27vw,300px);left:auto;right:4%;top:24%;background:conic-gradient(from 30deg,var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7),var(--r1));box-shadow:inset -30px -28px 55px #08091acc,inset 18px 16px 32px #ffffff65,0 0 85px #b85cff30;opacity:.28;filter:blur(1px)}
+.wrap{max-width:1120px;padding:clamp(16px,4vw,38px) clamp(14px,3vw,28px) 28px}
+.nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border:1px solid #ffffff20;border-radius:20px;background:#111329bd;backdrop-filter:blur(18px);box-shadow:0 14px 34px #0004}
+.logo{color:#fff;text-decoration:none;font-size:1.45rem;font-weight:900;letter-spacing:-.04em}.logo b{background:linear-gradient(100deg,var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rainbow-flow 7s linear infinite}
+.nav-spark{font-size:1.8rem;color:var(--r3);text-shadow:0 0 22px #ffe66d99;animation:sparkle 3s ease-in-out infinite}
+.hero{position:relative;isolation:isolate;overflow:hidden;margin-top:24px;padding:clamp(35px,7vw,82px) clamp(16px,5vw,56px) 42px;border:1px solid #ffffff22;border-radius:32px;background:linear-gradient(135deg,#191a39eF,#11162eeF 52%,#251331ed);box-shadow:0 28px 75px #0007,inset 0 1px #ffffff22;transform-style:preserve-3d}
+.hero:before{content:"";position:absolute;z-index:-1;width:280px;height:280px;right:-120px;top:-150px;border-radius:50%;background:conic-gradient(var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7),var(--r1));filter:blur(34px);opacity:.22}
+.hero:after{content:"✦";position:absolute;z-index:-1;left:5%;bottom:10%;font-size:clamp(3rem,8vw,6rem);color:#7f8cff36;transform:rotate(-18deg);text-shadow:0 0 32px #e879f944}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #69edb544;border-radius:999px;padding:8px 14px;background:#69edb50c;color:#a8ffdb;font-size:.8rem;letter-spacing:.08em}
+.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--r4);box-shadow:0 0 14px var(--r4)}
+.hero h1{max-width:850px;margin:22px auto 16px;font-size:clamp(2.25rem,6.5vw,5rem);line-height:1.28;letter-spacing:-.045em;text-wrap:balance}
+.hero h1 span{background:linear-gradient(100deg,var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rainbow-flow 8s linear infinite}
+.hero>p{max-width:670px;margin:0 auto 28px;color:var(--muted);font-size:clamp(1rem,1.8vw,1.13rem);line-height:2}
+.search{position:relative;z-index:1;max-width:760px;display:flex;gap:10px;margin:28px auto 0;padding:9px;border:1px solid #a5a6ff38;border-radius:20px;background:#090b1bd9;box-shadow:0 20px 50px #0006,inset 0 1px #ffffff12;backdrop-filter:blur(16px);transition:border-color .2s,box-shadow .2s}
+.search:focus-within{border-color:#54dfffad;box-shadow:0 0 0 4px #54dfff16,0 20px 50px #0006}
+.search input{flex:1;min-width:0;min-height:54px;border:0;outline:0;background:transparent;color:#fff;padding:12px 15px;font:inherit;text-align:left;direction:ltr}
+.search input::placeholder{color:#a9aecb;opacity:1}
+.search button,.download{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border:0;border-radius:15px;background:linear-gradient(110deg,var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7));background-size:220% 220%;color:#171026;font:inherit;font-weight:900;text-decoration:none;cursor:pointer;box-shadow:0 10px 26px #c35bce33;transition:transform .2s,box-shadow .2s,background-position .4s}
+.search button:hover,.download:hover,.ad-email:hover{transform:translateY(-3px);background-position:100% 50%;box-shadow:0 15px 32px #c35bce44}
+#result{display:none;max-width:760px;margin:22px auto 0;padding:22px;border:1px solid #54dfff42;border-radius:22px;background:linear-gradient(140deg,#111d34f5,#1a1633f5);box-shadow:0 20px 50px #0005,inset 0 1px #ffffff13}
+.result-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.type{padding:6px 12px;border:1px solid #69edb540;border-radius:999px;background:#69edb512;color:#a8ffdb}
+.notice{color:#c9cbe5;line-height:1.95}
+.download[hidden]{display:none!important}
+#ad-contact-shared{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:25px;max-width:1000px;margin:30px auto 0;padding:clamp(24px,5vw,42px);border:1px solid #ffffff25;border-radius:28px;background:linear-gradient(125deg,#21152feF,#151932f2 52%,#112c37f2);box-shadow:0 24px 65px #0006,inset 0 1px #ffffff18;transform-style:preserve-3d}
+#ad-contact-shared:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,#ff557713,#ff9b5410,#ffe66d0d,#69edb511,#54dfff12,#7f8cff13,#e879f914);pointer-events:none}
+.ad-copy{position:relative;z-index:1;max-width:650px}
+.ad-kicker{color:var(--r4);font-size:.74rem;letter-spacing:.22em;font-weight:800}
+.ad-copy h2{margin:9px 0 10px;font-size:clamp(1.5rem,3.4vw,2.2rem)}
+.ad-copy p{margin:0 0 20px;color:var(--muted);line-height:1.95}
+.ad-email{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(100deg,var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7));background-size:220% 220%;color:#181026;text-decoration:none;font-weight:900;box-shadow:0 10px 26px #b85cff25;transition:transform .2s,box-shadow .2s,background-position .4s}
+.ad-orbit{position:relative;flex:0 0 clamp(95px,18vw,175px);aspect-ratio:1;border-radius:35% 65% 57% 43% / 39% 35% 65% 61%;background:conic-gradient(var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r7),var(--r1));box-shadow:inset -18px -18px 35px #07081799,inset 12px 12px 28px #ffffff66,0 0 45px #e879f933;transform:rotate(-12deg);animation:float-gem 7s ease-in-out infinite}
+.ad-orbit span{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(2.5rem,6vw,4.8rem);color:#fff;text-shadow:0 3px 25px #241033aa;transform:rotate(12deg)}
+.ad-orbit i,.ad-orbit b{position:absolute;display:block;border:1px solid #ffffff75;border-radius:50%;inset:-12%;transform:rotateX(68deg) rotateZ(28deg);box-shadow:0 0 15px #54dfff25}
+.ad-orbit b{inset:-22%;transform:rotateX(68deg) rotateZ(-32deg);border-color:#ff9b5470}
+.signature{display:flex;align-items:center;justify-content:center;gap:16px;max-width:1000px;margin:26px auto 0;padding:12px 10px 28px;color:#e9e7ff;text-align:center}
+.signature p{margin:0;font-weight:800;font-size:clamp(.95rem,2.3vw,1.12rem)}
+.signature-line{width:clamp(22px,9vw,110px);height:1px;background:linear-gradient(90deg,transparent,#7f8cffaa,#54dfffaa,#69edb5aa,transparent)}
+.heart{display:inline-block;color:#ff496c;font-size:1.45em;vertical-align:-.12em;margin:0 3px;text-shadow:0 0 18px #ff496c77;animation:heart-beat 1.8s ease-in-out infinite}
+.smile{display:inline-block;color:#ffe66d;font-size:1.4em;vertical-align:-.1em;margin-right:4px;text-shadow:0 0 16px #ffe66d55}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--r5);outline-offset:4px}
+@keyframes rainbow-flow{to{background-position:200% center}}
+@keyframes sparkle{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(16deg) scale(1.15)}}
+@keyframes float-gem{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-9px) rotate(4deg)}}
+@keyframes heart-beat{0%,100%{transform:scale(1)}12%{transform:scale(1.15)}24%{transform:scale(1)}36%{transform:scale(1.1)}48%{transform:scale(1)}}
+@media(max-width:650px){.hero{border-radius:24px;padding-top:44px}.search{flex-direction:column}.search input{min-height:48px}.search button{width:100%}#ad-contact-shared{flex-direction:column-reverse;text-align:center;border-radius:23px}.ad-orbit{flex-basis:auto;width:110px}.signature{gap:8px}.signature-line{width:22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
   <div class="orb" id="orb"></div>
   <main class="wrap">
-    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><span class="badge" aria-label="وضعیت سایت">نسخهٔ نمایشی · دانلود واقعی غیرفعال</span></nav>
-    <section class="hero"><div class="eyebrow">سریع، ساده، مدرن</div><h1>لینک اینستاگرام را بده، <span>مرتب تحویل بگیر</span></h1><p>این نسخه برای نمایش طراحی و تجربه کاربری ساخته شده است. لینک عمومی پست، ریلز یا پروفایل را وارد کن.</p>
-      <form class="search" id="form"><input id="url" type="url" required placeholder="https://www.instagram.com/..." aria-label="آدرس اینستاگرام"><button type="submit">تحلیل لینک</button></form>
+    <nav class="nav"><a class="logo" href="/" aria-label="دانلودینو">دانلود<b>ینو</b></a><span class="nav-spark" aria-hidden="true">✦</span></nav>
+    <section class="hero"><div class="eyebrow"><span class="eyebrow-dot"></span> Instagram Link Tool</div><h1>لینکت رو وارد کن، <span>نوعش رو پیدا کن!</span></h1><p>لینک اینستاگرام را وارد کن تا نوع آن را تشخیص دهیم و بتوانی صفحهٔ اصلی را باز کنی.</p>
+      <form class="search" id="form"><input id="url" type="url" required placeholder="Enter Instagram URL..." aria-label="Enter Instagram URL"><button type="submit">Check URL <span aria-hidden="true">↗</span></button></form>
       <div id="result" aria-live="polite" aria-atomic="true"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">این ابزار لینک را بررسی می‌کند. دانلود مستقیم تنها زمانی فعال می‌شود که منبع، دسترسی مجاز و سرویس دانلود واقعی در دسترس باشند.</p><a class="download" id="safe-open-source" href="#" target="_blank" rel="noopener noreferrer" hidden>بازکردن منبع</a></div>
 
     </section>
-    <section class="features"><article class="feature"><h3>طراحی سه‌بعدی</h3><p>پس‌زمینه و عناصر صفحه با حرکت موس واکنش نشان می‌دهند.</p></article><article class="feature"><h3>تشخیص لینک</h3><p>نوع لینک به‌صورت نمایشی از روی آدرس تشخیص داده می‌شود.</p></article><article class="feature"><h3>امن و مسئولانه</h3><p>پردازش آینده فقط برای محتوای مجاز و دارای اجازه انجام خواهد شد.</p></article></section>
+    
     
   </main>
   <script>
@@ -98,7 +151,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
     document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const raw=document.getElementById('url').value.trim();let parsed;try{parsed=new URL(raw)}catch(_){return}const host=parsed.hostname.toLowerCase();const ok=parsed.protocol==='https:'&&(host==='instagram.com'||host.endsWith('.instagram.com'));const result=document.getElementById('result');const title=document.getElementById('title');const type=document.getElementById('type');const notice=document.querySelector('.notice');const source=document.getElementById('safe-open-source');source.hidden=true;source.removeAttribute('href');if(!ok){title.textContent='نشانی اینستاگرام معتبر نیست';type.textContent='دامنهٔ نامعتبر';notice.textContent='لطفاً یک لینک HTTPS از دامنهٔ instagram.com وارد کن. این صفحه صرفاً نسخهٔ نمایشی است.';result.style.display='block';return}const u=parsed.pathname.toLowerCase();let t='محتوای اینستاگرام';if(u.includes('/reel/'))t='ریلز';else if(u.includes('/p/'))t='پست';else if(u.includes('/audio/'))t='آهنگ';else if(/^\/[^/]+\/?$/.test(u))t='پروفایل';type.textContent=t;title.textContent='لینک با موفقیت شناسایی شد';notice.textContent='این نسخه فقط نوع لینک را تشخیص می‌دهد و دانلود مستقیم انجام نمی‌دهد. برای مشاهدهٔ محتوا می‌توانی منبع اصلی را باز کنی.';source.href=parsed.href;source.hidden=false;result.style.display='block'});
   </script>
 
-<section id="owner-contact" dir="rtl" aria-label="تماس و تبلیغات" style="margin:40px auto 20px;padding:24px;max-width:1000px;border:1px solid #ffffff26;border-radius:24px;background:linear-gradient(135deg,#14213d,#202b48);color:#fff;box-shadow:0 18px 45px #0002;text-align:center"><p style="margin:0 0 8px;opacity:.8">همکاری، تبلیغات و پیشنهادها</p><h2 style="margin:0 0 10px">امیررضا کیانی</h2><p style="margin:0 0 16px">برای تبلیغات، همکاری تجاری و پشتیبانی با من در تماس باشید.</p><p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0"><a style="color:#fff;font-weight:700" href="mailto:amirreki.5685@gmail.com">amirreki.5685@gmail.com</a><a style="color:#fff;font-weight:700" href="tel:+989034153445">09034153445</a></p><p style="margin:18px 0 0;font-weight:800">😊 ❤️ امیررضا کیانی</p></section>
+<section id="ad-contact-shared" dir="rtl" aria-labelledby="ad-title">
+  <div class="ad-orbit" aria-hidden="true"><span>✦</span><i></i><b></b></div>
+  <div class="ad-copy"><span class="ad-kicker">PARTNERSHIPS</span><h2 id="ad-title">جایگاه تبلیغات شما</h2><p>برای معرفی برند، تبلیغات یا همکاری تجاری، پیام بده تا دربارهٔ شرایط و جایگاه تبلیغ صحبت کنیم.</p><a class="ad-email" href="mailto:amirreki.5685@gmail.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA">ارسال درخواست تبلیغات <span aria-hidden="true">↗</span></a></div>
+</section>
+<footer class="signature" dir="rtl"><span class="signature-line"></span><p>ساخته‌شده با عشق <span class="heart" aria-label="قلب قرمز">♥</span> امیررضا کیانی <span class="smile" aria-label="لبخند">☺</span></p><span class="signature-line"></span></footer>
 
 <style id="downloadino-premium-polish">
 :root{--bg:#070712;--card:#101426;--text:#f7f6ff;--muted:#a8b1d0;--pink:#ff5ac8;--blue:#7c8dff;--cyan:#5ef4df}
