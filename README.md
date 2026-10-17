@@ -1,45 +1,30 @@
-# دانلودینو — ابزار نمایشی لینک اینستاگرام
+# Downloadino
 
-**وضعیت پروژه: نسخهٔ نمایشی (Demo)**
+Live site: https://downloadino.pages.dev/
 
-این صفحهٔ استاتیک فارسی، لینک‌های عمومی اینستاگرام را از روی ساختار URL بررسی می‌کند و نوع احتمالی آن‌ها را (پروفایل، پست، ریلز یا آهنگ) تشخیص می‌دهد. این نسخه هیچ محتوایی را از اینستاگرام دریافت یا دانلود نمی‌کند.
+Downloadino is a lightweight Instagram-link utility built with HTML, CSS, JavaScript, and a Cloudflare Pages Worker.
 
-## پیش‌نمایش
+## Repository layout
 
-https://downloadino.pages.dev/
+- `index.html` — website UI, format selector, and client-side download flow.
+- `_worker.js` — Cloudflare Pages Worker handling `/api/*` requests and best-effort public-post metadata retrieval.
+- `_routes.json` — routes API requests to the Worker.
+- `favicon.svg` — site icon.
+- `robots.txt` and `sitemap.xml` — basic search-engine discovery files.
+- `googledcd2bf3c6141b7b7.html` — Google Search Console verification file; keep it while the site uses this verification token.
+- `downloader/` — optional FastAPI/yt-dlp backend source. It is not deployed by Cloudflare Pages itself and requires a separate compatible host plus configuration of the `DOWNLOADER_API_URL` Worker environment variable before the Worker can use it.
 
-## امکانات فعلی
+## Deployment
 
-- رابط فارسی با چیدمان راست‌به‌چپ
-- بررسی اینکه دامنهٔ واردشده متعلق به `instagram.com` باشد
-- تشخیص نمایشی نوع لینک از روی مسیر URL
-- طراحی واکنش‌گرا با پس‌زمینهٔ تعاملی
-- اعتبارسنجی سمت مرورگر؛ بدون سرور یا پایگاه داده
+The production site is deployed on Cloudflare Pages from the `demo/initial-site` branch. Pushing changes to that branch triggers a Pages deployment.
 
-## اجرای محلی
+## Current limitations
 
-فایل `index.html` را در مرورگر باز کنید. برای اجرای ساده با سرور محلی نیز می‌توانید از این دستور در پوشهٔ پروژه استفاده کنید:
+- Download support depends on Instagram's public access behavior and the source media response; public links are not guaranteed to work.
+- Audio extraction requires the optional backend and FFmpeg. It is unavailable until that backend is deployed and connected.
+- The optional backend configuration is not part of the Cloudflare Pages deployment.
+- Only download content you own or have permission to save, and respect Instagram's terms.
 
-```bash
-python -m http.server 8000
-```
+## Local preview
 
-سپس به نشانی `http://localhost:8000` بروید.
-
-## محدودیت‌ها و حریم خصوصی
-
-- دکمهٔ دانلود واقعی عمداً غیرفعال است؛ این پروژه فقط نوع URL را تشخیص می‌دهد.
-- برای استفاده از این نسخه نیازی به ورود به اینستاگرام یا واردکردن رمز عبور نیست.
-- این پروژه هیچ قابلیت خرید فالوور، افزایش مصنوعی بازدید، یا دست‌کاری تعاملات ندارد.
-- قابلیت‌های آینده باید فقط از راهکارهای مجاز و با رعایت حقوق صاحبان محتوا و شرایط پلتفرم پیاده‌سازی شوند.
-
-## فناوری‌ها
-
-HTML، CSS و JavaScript خالص؛ بدون فریم‌ورک و بدون وابستگی به سرویس بک‌اند.
-
----
-
-# Downloadino — Instagram Link Demo
-
-A Persian, static demo that validates Instagram URL hosts and classifies common paths (profile, post, reel, and audio). It does not fetch or download Instagram content. No sign-in, credentials, backend, or database is required.
-
+Open `index.html` for a basic UI preview. Worker/API functionality requires the Cloudflare Pages development environment or a deployed Pages site.
