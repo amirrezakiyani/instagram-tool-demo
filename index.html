@@ -7,7 +7,7 @@
 
   <meta name="author" content="امیررضا کیانی">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#080817">
+  <meta name="theme-color" content="#080817">\n  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
   <link rel="canonical" href="https://downloadino.pages.dev/">
   <meta property="og:locale" content="fa_IR">
   <meta property="og:type" content="website">
@@ -152,8 +152,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   </script>
 
 <section id="ad-contact-shared" dir="rtl" aria-labelledby="ad-title">
-  <div class="ad-orbit" aria-hidden="true"><span>✦</span><i></i><b></b></div>
-  <div class="ad-copy"><span class="ad-kicker">PARTNERSHIPS</span><h2 id="ad-title">جایگاه تبلیغات شما</h2><p>برای معرفی برند، تبلیغات یا همکاری تجاری، پیام بده تا دربارهٔ شرایط و جایگاه تبلیغ صحبت کنیم.</p><a class="ad-email" href="mailto:amirreki.5685@gmail.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA">ارسال درخواست تبلیغات <span aria-hidden="true">↗</span></a></div>
+  <div class="ad-visual" aria-hidden="true"><div class="ad-megaphone"><span class="mega-mouth"></span><span class="mega-body"></span><span class="mega-handle"></span><span class="mega-grip"></span></div><span class="ad-spark ad-spark-one">✦</span><span class="ad-spark ad-spark-two">✧</span><span class="ad-spark ad-spark-three">✦</span><div class="ad-mini-label">YOUR BRAND</div></div>
+  <div class="ad-copy"><span class="ad-kicker">PARTNERSHIPS</span><h2 id="ad-title">جایگاه تبلیغات شما</h2><p>برای معرفی برند، تبلیغات یا همکاری تجاری، پیام بده تا دربارهٔ شرایط و جایگاه تبلیغ صحبت کنیم.</p><a class="ad-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amirreki.5685%40gmail.com&amp;su=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer">ارسال درخواست تبلیغات <span aria-hidden="true">↗</span></a></div>
 </section>
 <footer class="signature" dir="rtl"><span class="signature-line"></span><p>ساخته‌شده با عشق <span class="heart" aria-label="قلب قرمز">♥</span> امیررضا کیانی <span class="smile" aria-label="لبخند">☺</span></p><span class="signature-line"></span></footer>
 
@@ -221,5 +221,25 @@ body:after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opac
 (()=>{const init=()=>{const candidates=[...document.querySelectorAll('main,.hero,.hero-card,.hero-content,.hero-visual,.orb,.visual,.showcase,.intro,.profile-card,.features .feature,.project-grid .project')];const seen=new Set();let count=0;for(const el of candidates){if(seen.has(el)||count>=7)continue;if(el.closest('#owner-contact,#ad-contact-shared,footer,nav,header'))continue;const rect=el.getBoundingClientRect();if(rect.width<140||rect.height<90)continue;seen.add(el);el.classList.add('finish-3d-card');if(!el.parentElement?.classList.contains('finish-3d-stage')){const wrap=document.createElement('div');wrap.className='finish-3d-stage';el.parentNode.insertBefore(wrap,el);wrap.appendChild(el)}el.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='rotateX('+(-y*7).toFixed(2)+'deg) rotateY('+(x*9).toFixed(2)+'deg) translateY(-2px)';el.style.boxShadow='0 24px 50px rgba(52,88,145,.18)'},{passive:true});el.addEventListener('pointerleave',()=>{el.style.transform='';el.style.boxShadow='';},{passive:true});count++} };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();
 </script>
 
-</body>
+
+<style id="downloadino-ad-illustration-and-favicon-polish">
+/* A custom dimensional megaphone replaces the abstract orb */
+#ad-contact-shared .ad-visual{position:relative;isolation:isolate;flex:0 0 clamp(130px,22vw,220px);height:clamp(130px,22vw,220px);display:grid;place-items:center;perspective:800px;overflow:visible}
+#ad-contact-shared .ad-visual:before{content:"";position:absolute;inset:12%;border-radius:50%;background:conic-gradient(from 10deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9,#ff5577);filter:blur(27px);opacity:.28;z-index:-1}
+#ad-contact-shared .ad-megaphone{position:relative;width:145px;height:115px;transform:rotate(-17deg) rotateY(-13deg);filter:drop-shadow(0 20px 15px #05071999);animation:megaphone-float 5s ease-in-out infinite}
+#ad-contact-shared .mega-body{position:absolute;left:15px;top:25px;width:80px;height:58px;background:linear-gradient(145deg,#fff0a6 0%,#ff9b54 18%,#ff5577 52%,#a35bff 100%);clip-path:polygon(0 28%,100% 0,100% 100%,0 72%);border-radius:8px;box-shadow:inset 0 3px 8px #ffffff80}
+#ad-contact-shared .mega-mouth{position:absolute;right:0;top:10px;width:62px;height:88px;border-radius:12px 24px 24px 12px;background:linear-gradient(130deg,#8af8ff,#54dfff 35%,#7f8cff 70%,#e879f9);clip-path:polygon(0 20%,100% 0,100% 100%,0 80%);box-shadow:inset 0 4px 10px #ffffff9c}
+#ad-contact-shared .mega-handle{position:absolute;left:36px;top:74px;width:23px;height:43px;border-radius:5px 5px 10px 10px;transform:skew(-12deg);background:linear-gradient(90deg,#69edb5,#2bbaae 70%,#167f91);box-shadow:inset 3px 0 5px #ffffff80}
+#ad-contact-shared .mega-grip{position:absolute;left:27px;top:77px;width:36px;height:9px;border-radius:6px;background:linear-gradient(90deg,#ffe66d,#ff9b54);transform:rotate(2deg)}
+#ad-contact-shared .ad-spark{position:absolute;font-size:28px;font-weight:900;text-shadow:0 0 18px currentColor;animation:sparkle 3s ease-in-out infinite}
+#ad-contact-shared .ad-spark-one{top:10%;right:9%;color:#ffe66d}
+#ad-contact-shared .ad-spark-two{top:25%;left:6%;color:#54dfff;font-size:36px;animation-delay:.6s}
+#ad-contact-shared .ad-spark-three{bottom:13%;right:12%;color:#e879f9;font-size:22px;animation-delay:1s}
+#ad-contact-shared .ad-mini-label{position:absolute;bottom:3%;left:50%;transform:translateX(-50%) rotate(-3deg);white-space:nowrap;padding:6px 12px;border:1px solid #ffffff38;border-radius:999px;background:linear-gradient(100deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9);color:#171026;font-size:10px;font-weight:950;letter-spacing:.16em;box-shadow:0 8px 20px #0004}
+#ad-contact-shared .ad-email{cursor:pointer}
+@keyframes megaphone-float{0%,100%{transform:translateY(0) rotate(-17deg) rotateY(-13deg)}50%{transform:translateY(-8px) rotate(-12deg) rotateY(4deg)}}
+@media(max-width:650px){#ad-contact-shared .ad-visual{flex-basis:auto;width:145px;height:145px}#ad-contact-shared .ad-megaphone{transform:scale(.8) rotate(-17deg)}}
+@media(prefers-reduced-motion:reduce){#ad-contact-shared .ad-megaphone,#ad-contact-shared .ad-spark{animation:none!important}}
+</style>
+\n</body>
 </html>
