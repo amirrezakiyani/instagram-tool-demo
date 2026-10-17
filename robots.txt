@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amirrezakiyani.github.io/instagram-tool-demo/sitemap.xml
+Sitemap: https://downloadino.pages.dev/sitemap.xml
