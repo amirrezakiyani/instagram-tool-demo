@@ -22,6 +22,74 @@ export default {
         return json({ error: "لینک معتبر ریلز یا پست عمومی اینستاگرام را وارد کن." }, 400);
       }
 
+      // First try Instagram's current web GraphQL media endpoint. HTML pages often
+      // redirect logged-out visitors to login and omit the actual video URL.
+      // This is best-effort only: Instagram can rotate the document ID or block requests.
+      let graphqlMediaUrl = "";
+      try {
+        const shortcode = source.pathname.split("/").filter(Boolean).pop();
+        const home = await fetch("https://www.instagram.com/", {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Language": "en-US,en;q=0.8"
+          },
+          signal: AbortSignal.timeout(10000)
+        });
+        const cookieHeaders = home.headers.get("set-cookie") || "";
+        const csrfMatch = cookieHeaders.match(/(?:^|[,; ]+)csrftoken=([^;,s]+)/);
+        const homeHtml = await home.text();
+        const csrfFromHtml = homeHtml.match(/"csrf_token"\s*:\s*"([^"]+)"/);
+        const csrf = csrfMatch?.[1] || csrfFromHtml?.[1] || "";
+        if (csrf) {
+          const gql = await fetch("https://www.instagram.com/graphql/query", {
+            method: "POST",
+            headers: {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+              "Accept": "*/*",
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-IG-App-ID": "936619743392459",
+              "X-CSRFToken": csrf,
+              "X-Requested-With": "XMLHttpRequest",
+              "Origin": "https://www.instagram.com",
+              "Referer": source.href,
+              "Cookie": "csrftoken=" + csrf
+            },
+            body: new URLSearchParams({
+              doc_id: "27128499623469141",
+              variables: JSON.stringify({
+                shortcode,
+                "__relay_internal__pv__PolarisAIGMMediaWebLabelEnabledrelayprovider": false
+              })
+            }).toString(),
+            signal: AbortSignal.timeout(14000)
+          });
+          if (gql.ok) {
+            const payload = await gql.json();
+            const seen = new Set();
+            const visit = (node) => {
+              if (!node || typeof node !== "object") return;
+              if (seen.has(node)) return;
+              seen.add(node);
+              if (Array.isArray(node.video_versions)) {
+                const match = node.video_versions.find(v => typeof v?.url === "string" && /^https:\/\//.test(v.url));
+                if (match) { graphqlMediaUrl = match.url; return; }
+              }
+              if (node.video_url && typeof node.video_url === "string" && /^https:\/\//.test(node.video_url)) {
+                graphqlMediaUrl = node.video_url; return;
+              }
+              for (const value of Object.values(node)) {
+                if (graphqlMediaUrl) return;
+                if (value && typeof value === "object") visit(value);
+              }
+            };
+            visit(payload);
+          }
+        }
+      } catch (_) {
+        // Continue with the HTML fallback below.
+      }
+
       const pageResponse = await fetch(source.href, {
         redirect: "follow",
         headers: {
@@ -37,7 +105,7 @@ export default {
       }
 
       const html = await pageResponse.text();
-      let mediaUrl = "";
+      let mediaUrl = graphqlMediaUrl;
 
       // Prefer Instagram's embedded video URL, then Open Graph video metadata.
       const embedded = html.match(/"video_url"\s*:\s*"((?:\\.|[^"\\])*)"/);
