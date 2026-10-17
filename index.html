@@ -234,7 +234,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       button.disabled=true;button.innerHTML='Preparing download… <span aria-hidden="true">◌</span>';result.style.display='none';
       try{
         const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/octet-stream, application/json'},body:JSON.stringify({url:parsed.href,format:formatSelect.value})});
-        if(!response.ok){let message='Download failed. The post may be private or Instagram may be restricting access.';try{const data=await response.json();if(data&&data.error)message=data.error}catch(_){}throw new Error(message)}
+        if(!response.ok){let message='Download failed. The post may be private or Instagram may be restricting access.';try{const data=await response.json();if(data&&(data.error||data.detail))message=data.error||data.detail}catch(_){}throw new Error(message)}
         const blob=await response.blob();if(!blob.size)throw new Error('The downloaded file was empty. Please try again.');
         const disposition=response.headers.get('Content-Disposition')||'',match=disposition.match(/filename="?([^";]+)"?/i);
         const extension={video:'mp4',audio:'mp3',image:'jpg'}[formatSelect.value]||'mp4';const filename=match?match[1]:'downloadino-instagram.'+extension;
