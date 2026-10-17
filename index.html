@@ -65,7 +65,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;ba
 .hero h1{font-size:clamp(2rem,5vw,4rem);line-height:1.35;letter-spacing:-.045em;text-wrap:balance}.hero h1 span{background:linear-gradient(100deg,#ff8bd3,#a8b6ff,#7df7e7);background-clip:text;-webkit-background-clip:text;color:transparent}
 .hero>p{max-width:690px;color:var(--muted);font-size:clamp(1rem,1.6vw,1.15rem);line-height:2}
 .search{display:flex;gap:10px;margin-top:28px;padding:9px;border:1px solid #ffffff2b;border-radius:19px;background:#090b1ac9;box-shadow:0 14px 36px #0004}
-.search input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:#fff;padding:12px;font:inherit}.search input::placeholder{color:#999bbd}
+.search input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:#fff;padding:12px;font:inherit}.search input::placeholder{color:#999bbd}.search select{max-width:170px;border:1px solid #ffffff25;border-radius:12px;background:#17152f;color:#fff;padding:0 12px;font:inherit;cursor:pointer}.search select option{background:#17152f;color:#fff}@media(max-width:520px){.search select{max-width:none;min-height:46px}}
 .search button,.download{border:0;border-radius:13px;background:linear-gradient(120deg,#ff4db8,#786bff 55%,#36cfc5);color:white;font:inherit;font-weight:800;padding:12px 20px;box-shadow:0 8px 22px #775de855;cursor:pointer}
 .features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
 .features .feature{position:relative;padding:24px;border:1px solid #ffffff1e;border-radius:23px;background:linear-gradient(145deg,#ffffff10,#ffffff04);box-shadow:0 16px 36px #0003,inset 0 1px #ffffff18;transform:perspective(900px) rotateX(0deg);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
@@ -178,7 +178,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
         <form class="search" id="form">
           <label class="sr-only" for="url">Instagram post or Reel URL</label>
           <input id="url" type="url" required placeholder="Paste Instagram link here…" aria-label="Instagram post or Reel URL" autocomplete="url" spellcheck="false">
-          <button type="submit">Download <span aria-hidden="true">↓</span></button>
+          <label class="sr-only" for="format">Download format</label><select id="format" aria-label="Download format"><option value="video">Video (MP4)</option><option value="audio">Audio (MP3)</option><option value="image">Cover (JPG)</option></select><button type="submit">Download <span aria-hidden="true">↓</span></button>
         </form>
         <p class="privacy-note"><span aria-hidden="true">✓</span> No account required <span>·</span> Public links only</p>
         <div id="result" aria-live="polite" aria-atomic="true">
@@ -218,7 +218,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
   </main>
   <script>
     const orb=document.getElementById('orb');
-    const form=document.getElementById('form'),input=document.getElementById('url');
+    const form=document.getElementById('form'),input=document.getElementById('url'),formatSelect=document.getElementById('format');
     const result=document.getElementById('result'),title=document.getElementById('title');
     const type=document.getElementById('type'),notice=document.querySelector('.notice');
     const button=form.querySelector('button');
@@ -233,13 +233,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       if(!valid){result.style.display='block';title.textContent='Invalid Instagram link';type.textContent='CHECK URL';notice.textContent='Enter a valid public Instagram Reel or post URL.';return}
       button.disabled=true;button.innerHTML='Preparing download… <span aria-hidden="true">◌</span>';result.style.display='none';
       try{
-        const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/octet-stream, application/json'},body:JSON.stringify({url:parsed.href})});
+        const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/octet-stream, application/json'},body:JSON.stringify({url:parsed.href,format:formatSelect.value})});
         if(!response.ok){let message='Download failed. The post may be private or Instagram may be restricting access.';try{const data=await response.json();if(data&&data.error)message=data.error}catch(_){}throw new Error(message)}
         const blob=await response.blob();if(!blob.size)throw new Error('The downloaded file was empty. Please try again.');
         const disposition=response.headers.get('Content-Disposition')||'',match=disposition.match(/filename="?([^";]+)"?/i);
-        const filename=match?match[1]:'downloadino-instagram.mp4';
+        const extension={video:'mp4',audio:'mp3',image:'jpg'}[formatSelect.value]||'mp4';const filename=match?match[1]:'downloadino-instagram.'+extension;
         const objectUrl=URL.createObjectURL(blob),a=document.createElement('a');a.href=objectUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(objectUrl),30000);
-        result.style.display='block';title.textContent='Download started';type.textContent='MP4 READY';notice.textContent='Your file was received. Check your browser downloads.';
+        result.style.display='block';title.textContent='Download started';type.textContent=({video:'MP4 READY',audio:'MP3 READY',image:'JPG READY'}[formatSelect.value]||'FILE READY');notice.textContent='Your file was received. Check your browser downloads.';
       }catch(err){result.style.display='block';title.textContent='Download failed';type.textContent='TRY AGAIN';notice.textContent=err.message||'Could not retrieve the video file.'}
       finally{button.disabled=false;button.innerHTML='Download <span aria-hidden="true">↓</span>'}
     });
