@@ -40,7 +40,7 @@ export default {
       let mediaUrl = "";
 
       // Prefer Instagram's embedded video URL, then Open Graph video metadata.
-      const embedded = html.match(/"video_url"\s*:\s*"((?:\\\\.|[^"\\\\])+)"/);
+      const embedded = html.match(/"video_url"\s*:\s*"((?:\\.|[^"\\])*)"/);
       if (embedded) {
         try { mediaUrl = JSON.parse('"' + embedded[1] + '"'); } catch (_) {
           mediaUrl = embedded[1].replace(/\\u0026/g, "&").replace(/\\\//g, "/");
