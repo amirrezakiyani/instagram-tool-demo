@@ -229,7 +229,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       e.preventDefault();const raw=input.value.trim();let parsed;
       try{parsed=new URL(raw)}catch(_){return}
       const host=parsed.hostname.toLowerCase();
-      const valid=parsed.protocol==='https:'&&(host==='instagram.com'||host==='www.instagram.com')&&(/^\\/(reel|reels|p|tv)\\/[A-Za-z0-9_-]+\\/?$/.test(parsed.pathname));
+      const valid=parsed.protocol==='https:'&&(host==='instagram.com'||host==='www.instagram.com')&&(/^\/(reel|reels|p|tv)\/[A-Za-z0-9_-]+\/?$/.test(parsed.pathname));
       if(!valid){result.style.display='block';title.textContent='Invalid Instagram link';type.textContent='CHECK URL';notice.textContent='Enter a valid public Instagram Reel or post URL.';return}
       button.disabled=true;button.innerHTML='Preparing download… <span aria-hidden="true">◌</span>';result.style.display='none';
       try{
