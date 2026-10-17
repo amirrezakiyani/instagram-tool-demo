@@ -39,6 +39,9 @@ export default {
 
     try {
       const body = await request.json();
+      const format = body?.format || "video";
+      if (!["video", "audio", "image"].includes(format)) return json({ error: "Choose Video (MP4), Audio (MP3), or Cover (JPG)." }, 400);
+      if (format === "audio") return json({ error: "MP3 extraction needs the separate media-processing service, which is not configured yet. Video downloads may still work." }, 503);
       const source = new URL(String(body?.url || ""));
       if (source.protocol !== "https:" ||
           !["instagram.com", "www.instagram.com"].includes(source.hostname.toLowerCase()) ||
@@ -129,6 +132,40 @@ export default {
       }
 
       const html = await pageResponse.text();
+
+      if (format === "image") {
+        const metaTags = html.match(/<meta\\b[^>]*>/gi) || [];
+        let imageUrl = "";
+        for (const tag of metaTags) {
+          if (!/property\\s*=\\s*["']og:image["']/i.test(tag)) continue;
+          const value = tag.match(/content\\s*=\\s*["']([^"']+)["']/i);
+          if (value) { imageUrl = value[1].replace(/&amp;/g, "&"); break; }
+        }
+        if (!imageUrl) return json({ error: "Instagram did not expose a public cover image for this post." }, 422);
+        let imageSource;
+        try { imageSource = new URL(imageUrl); } catch (_) { return json({ error: "The cover image URL was invalid." }, 422); }
+        const imageHost = imageSource.hostname.toLowerCase();
+        if (imageSource.protocol !== "https:" ||
+            !(imageHost.endsWith(".cdninstagram.com") || imageHost === "cdninstagram.com" ||
+              imageHost.endsWith(".fbcdn.net") || imageHost === "fbcdn.net")) {
+          return json({ error: "The cover image source could not be verified." }, 422);
+        }
+        const imageResponse = await fetch(imageSource.href, {
+          headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36", "Referer": "https://www.instagram.com/" },
+          redirect: "follow",
+          signal: AbortSignal.timeout(20000)
+        });
+        if (!imageResponse.ok || !imageResponse.body) return json({ error: "Could not retrieve the cover image. Please try again." }, 502);
+        const contentType = imageResponse.headers.get("Content-Type") || "image/jpeg";
+        const ext = contentType.includes("png") ? "png" : contentType.includes("webp") ? "webp" : "jpg";
+        return new Response(imageResponse.body, { status: 200, headers: {
+          "Content-Type": contentType,
+          "Content-Disposition": 'attachment; filename="downloadino-cover.' + ext + '"',
+          "Cache-Control": "no-store",
+          "X-Content-Type-Options": "nosniff"
+        }});
+      }
+
       let mediaUrl = graphqlMediaUrl;
 
       // Prefer Instagram's embedded video URL, then Open Graph video metadata.
