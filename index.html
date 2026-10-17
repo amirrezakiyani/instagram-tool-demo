@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ابزار آزمایشی تحلیل لینک اینستاگرام با طراحی سه‌بعدی">
+  <meta name="description" content="Download public Instagram Reels and posts as MP4 with Downloadino. Fast, simple, and free to use.">
 
   <meta name="author" content="امیررضا کیانی">
   <meta name="robots" content="index, follow">
@@ -11,31 +11,31 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
   <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg?v=4">
   <link rel="canonical" href="https://downloadino.pages.dev/">
-  <meta property="og:locale" content="fa_IR">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="دانلودینو">
-  <meta property="og:title" content="دانلودینو | ابزار آزمایشی لینک اینستاگرام">
-  <meta property="og:description" content="ابزار آزمایشی تشخیص لینک پست، ریلز و پروفایل اینستاگرام با طراحی مدرن و سریع.">
+  <meta property="og:site_name" content="Downloadino">
+  <meta property="og:title" content="Downloadino — Instagram Video Downloader">
+  <meta property="og:description" content="Download public Instagram Reels and posts as MP4.">
   <meta property="og:url" content="https://downloadino.pages.dev/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="دانلودینو | ابزار آزمایشی لینک اینستاگرام">
-  <meta name="twitter:description" content="تشخیص نمایشی لینک پست، ریلز و پروفایل اینستاگرام؛ فقط برای محتوای مجاز.">
+  <meta name="twitter:description" content="Download public Instagram videos and Reels as MP4.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "دانلودینو",
+    "name": "Downloadino",
     "url": "https://downloadino.pages.dev/",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Web",
-    "inLanguage": "fa-IR",
-    "description": "ابزار آزمایشی تشخیص لینک محتوای عمومی اینستاگرام."
+    "inLanguage": "en",
+    "description": "Instagram video downloader for publicly accessible posts and Reels."
   }
   </script>
-  <title>دانلودینو | ابزار لینک اینستاگرام</title>
+  <title>Downloadino — Instagram Video Downloader</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
 
     :root{--bg:#080817;--card:#15152b;--text:#f7f7ff;--muted:#aaaaca;--pink:#ff4db8;--blue:#5c7cff;--cyan:#40e0d0}
@@ -135,270 +135,114 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 @media(max-width:650px){.hero{border-radius:24px;padding-top:44px}.search{flex-direction:column}.search input{min-height:48px}.search button{width:100%}#ad-contact-shared{flex-direction:column-reverse;text-align:center;border-radius:23px}.ad-orbit{flex-basis:auto;width:110px}.signature{gap:8px}.signature-line{width:22px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
-</head>
-<body>
-  <div class="orb" id="orb"></div>
-  <main class="wrap">
-    <nav class="nav"><a class="logo" href="/" aria-label="دانلودینو">دانلود<b>ینو</b></a><span class="nav-spark" aria-hidden="true">✦</span></nav>
-    <section class="hero"><div class="eyebrow"><span class="eyebrow-dot"></span> Instagram Link Tool</div><h1>لینکت رو وارد کن، <span>نوعش رو پیدا کن!</span></h1><p>لینک اینستاگرام را وارد کن تا نوع آن را تشخیص دهیم و بتوانی صفحهٔ اصلی را باز کنی.</p>
-      <form class="search" id="form"><input id="url" type="url" required placeholder="Enter Instagram URL..." aria-label="Enter Instagram URL"><button type="submit">Check URL <span aria-hidden="true">↗</span></button></form>
-      <div id="result" aria-live="polite" aria-atomic="true"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">این ابزار لینک را بررسی می‌کند. دانلود مستقیم تنها زمانی فعال می‌شود که منبع، دسترسی مجاز و سرویس دانلود واقعی در دسترس باشند.</p><a class="download" id="safe-open-source" href="#" target="_blank" rel="noopener noreferrer" hidden>بازکردن منبع</a></div>
 
-    </section>
-
-    <section class="platforms" aria-label="انواع محتوای پشتیبانی‌شده">
-      <div class="platform-chip"><span>▶</span><strong>ریلز</strong><small>Instagram Reels</small></div>
-      <div class="platform-chip"><span>▣</span><strong>ویدیو</strong><small>Instagram Videos</small></div>
-      <div class="platform-chip"><span>▧</span><strong>عکس</strong><small>Instagram Photos</small></div>
-      <div class="platform-chip"><span>▤</span><strong>پست‌ها</strong><small>Public Posts</small></div>
-    </section>
-
-    <section class="howto" id="howto">
-      <div class="section-heading"><span class="section-kicker">ساده و سریع</span><h2>چطور از دانلودینو استفاده کنی؟</h2><p>سه قدم ساده برای دریافت محتوایی که اجازهٔ ذخیره‌کردنش را داری.</p></div>
-      <div class="steps">
-        <article class="step"><span class="step-number">۱</span><div class="step-icon">↗</div><h3>لینک را کپی کن</h3><p>در اینستاگرام پست یا ریلز عمومی موردنظرت را باز کن و لینک آن را کپی کن.</p></article>
-        <article class="step"><span class="step-number">۲</span><div class="step-icon">▣</div><h3>لینک را وارد کن</h3><p>لینک را در کادر بالای صفحه بچسبان و روی دکمهٔ دانلود بزن.</p></article>
-        <article class="step"><span class="step-number">۳</span><div class="step-icon">↓</div><h3>فایل را دریافت کن</h3><p>اگر محتوای عمومی قابل دسترسی باشد، فایل آمادهٔ ذخیره‌سازی می‌شود.</p></article>
-      </div>
-    </section>
-
-    <section class="faq" id="faq">
-      <div class="section-heading"><span class="section-kicker">پاسخ پرسش‌ها</span><h2>سؤالات متداول</h2></div>
-      <details><summary>آیا برای دانلود باید وارد حساب اینستاگرام شوم؟</summary><p>خیر؛ رمز عبور یا اطلاعات ورودت را در این سایت وارد نکن. دسترسی به محتوای خصوصی پشتیبانی نمی‌شود.</p></details>
-      <details><summary>چرا بعضی لینک‌ها دانلود نمی‌شوند؟</summary><p>ممکن است حساب خصوصی باشد یا اینستاگرام دسترسی خودکار به رسانه را محدود کرده باشد. خطای نمایش‌داده‌شده را بررسی کن و بعداً دوباره امتحان کن.</p></details>
-      <details><summary>آیا می‌توانم ویدیو و عکس ذخیره کنم؟</summary><p>رابط کاربری از لینک ریلز، ویدیو و پست پشتیبانی می‌کند؛ دریافت واقعی فایل به دسترسی منبع و موفقیت سرویس دانلود بستگی دارد.</p></details>
-    </section>
-    
-    
-  </main>
-  <script>
-    const orb=document.getElementById('orb');
-    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let pointerFrame=0;
-    if(orb&&!reduceMotion){document.addEventListener('pointermove',e=>{if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.06}px, ${(e.clientY-innerHeight/2)*.06}px)`;pointerFrame=0})},{passive:true})}
-    const form=document.getElementById('form');
-    const input=document.getElementById('url');
-    const result=document.getElementById('result');
-    const title=document.getElementById('title');
-    const type=document.getElementById('type');
-    const notice=document.querySelector('.notice');
-    const button=form.querySelector('button');
-    form.querySelector('button').innerHTML='دانلود <span aria-hidden="true">↓</span>';
-    document.getElementById('safe-open-source').hidden=true;
-    form.addEventListener('submit',async e=>{
-      e.preventDefault();
-      const raw=input.value.trim();
-      let parsed;
-      try{parsed=new URL(raw)}catch(_){return}
-      const host=parsed.hostname.toLowerCase();
-      const ok=parsed.protocol==='https:'&&(host==='instagram.com'||host==='www.instagram.com')&&(/^\/(reel|reels|p|tv)\/[A-Za-z0-9_-]+\/?$/.test(parsed.pathname));
-      if(!ok){result.style.display='block';title.textContent='لینک معتبر نیست';type.textContent='';notice.textContent='لینک عمومی ریلز یا پست اینستاگرام را وارد کن.';return}
-      button.disabled=true;button.innerHTML='در حال دانلود…';result.style.display='none';
-      try{
-        const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/octet-stream, application/json'},body:JSON.stringify({url:parsed.href})});
-        if(!response.ok){
-          let message='دانلود این لینک ممکن نشد. ممکن است پست خصوصی باشد یا اینستاگرام دسترسی را محدود کرده باشد.';
-          try{const data=await response.json();if(data&&data.error)message=data.error}catch(_){}
-          throw new Error(message);
-        }
-        const blob=await response.blob();
-        if(!blob.size)throw new Error('فایل دانلودی خالی بود؛ دوباره تلاش کن.');
-        const disposition=response.headers.get('Content-Disposition')||'';
-        const match=disposition.match(/filename="?([^";]+)"?/i);
-        const filename=match?match[1]:'downloadino-instagram.mp4';
-        const objectUrl=URL.createObjectURL(blob);
-        const a=document.createElement('a');a.href=objectUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();
-        setTimeout(()=>URL.revokeObjectURL(objectUrl),30000);
-      }catch(err){
-        result.style.display='block';title.textContent='دانلود انجام نشد';type.textContent='';notice.textContent=err.message||'خطا در دریافت فایل.';
-      }finally{button.disabled=false;button.innerHTML='دانلود <span aria-hidden="true">↓</span>'}
-    });
-  </script>
-<section id="ad-contact-shared" dir="rtl" aria-labelledby="ad-title">
-  <div class="ad-visual" aria-hidden="true"><div class="ad-megaphone"><span class="mega-mouth"></span><span class="mega-body"></span><span class="mega-handle"></span><span class="mega-grip"></span></div><span class="ad-spark ad-spark-one">✦</span><span class="ad-spark ad-spark-two">✧</span><span class="ad-spark ad-spark-three">✦</span><div class="ad-mini-label">YOUR BRAND</div></div>
-  <div class="ad-copy"><span class="ad-kicker">PARTNERSHIPS</span><h2 id="ad-title">جایگاه تبلیغات شما</h2><p>برای معرفی برند، تبلیغات یا همکاری تجاری، پیام بده تا دربارهٔ شرایط و جایگاه تبلیغ صحبت کنیم.</p><a class="ad-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amirreki.5685%40gmail.com&amp;su=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer">ارسال درخواست تبلیغات <span aria-hidden="true">↗</span></a></div>
-</section>
-<footer class="signature" dir="rtl"><span class="signature-line"></span><p>ساخته‌شده با عشق <span class="heart" aria-label="قلب قرمز">♥</span> امیررضا کیانی <span class="smile" aria-label="لبخند">☺</span></p><span class="signature-line"></span></footer>
-
-<style id="downloadino-premium-polish">
-:root{--bg:#070712;--card:#101426;--text:#f7f6ff;--muted:#a8b1d0;--pink:#ff5ac8;--blue:#7c8dff;--cyan:#5ef4df}
-body{background:radial-gradient(ellipse at 14% 4%,#48227c55,transparent 34%),radial-gradient(ellipse at 88% 26%,#0e749055,transparent 31%),linear-gradient(145deg,#070712,#0a1020 55%,#180b20);background-attachment:fixed}
-.orb{width:clamp(190px,26vw,320px);height:clamp(190px,26vw,320px);background:radial-gradient(circle at 28% 24%,#ffffffaa 0 2%,#ffb6eb 7%,#ff5ac8 24%,#765cff 55%,#10152e 79%);box-shadow:inset -35px -35px 65px #02020b99,inset 22px 18px 35px #ffffff33,0 0 90px #a855f744;will-change:transform}
-.wrap{max-width:1160px}
-.nav{padding-block:22px;border-bottom:1px solid #b8c5ff1a}
-.logo{letter-spacing:-.03em}
-.badge{background:#ffffff07;border-color:#ffffff20;backdrop-filter:blur(12px);color:#c5c9e1}
-.hero{padding:clamp(60px,8vw,100px) 0 48px}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #5ef4df35;border-radius:999px;background:#5ef4df09}
-.hero h1{font-size:clamp(2.2rem,6.3vw,5.1rem);letter-spacing:-.045em;line-height:1.25;text-wrap:balance}
-.hero h1 span{background:linear-gradient(100deg,#ff92d9,#b2a7ff 52%,#5ef4df);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:#b7c1de;max-width:660px}
-.search{position:relative;border-radius:22px;background:linear-gradient(145deg,#ffffff11,#ffffff04);border-color:#b8c5ff2b;box-shadow:0 26px 75px #0008,inset 0 1px #ffffff10}
-.search:focus-within{border-color:#5ef4df88;box-shadow:0 0 0 4px #5ef4df12,0 26px 75px #0008}
-.search input{min-height:52px}
-.search button,.download{min-height:50px;border-radius:15px;background:linear-gradient(120deg,#ff5ac8,#8b7bff 60%,#5ef4df);color:#0b0b18;font-weight:800;box-shadow:0 12px 28px #a855f733;transition:transform .22s,box-shadow .22s}
-.search button:hover,.download:hover{transform:translateY(-2px);box-shadow:0 18px 36px #a855f744}
-.features{gap:18px}
-.features .feature{position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(145deg,#151b32ee,#0d1325ee);border:1px solid #b8c5ff20;box-shadow:0 18px 48px #0005,inset 0 1px #ffffff0b;transition:transform .25s,border-color .25s,box-shadow .25s}
-.features .feature:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff5ac8,#8b7bff,#5ef4df);opacity:.72}
-.features .feature:hover{transform:translateY(-7px);border-color:#5ef4df55;box-shadow:0 26px 55px #0007,0 0 28px #5ef4df0b}
-.features .feature h3{color:#f7f6ff}
-.features .feature p{color:#aeb8d7}
-.result{border:1px solid #5ef4df35!important;border-radius:22px!important;background:radial-gradient(ellipse at 90% 0%,#5ef4df12,transparent 45%),linear-gradient(145deg,#121d32,#0c1324)!important;box-shadow:0 25px 65px #0007!important}
-.notice{border-radius:14px}
-footer{border-top:1px solid #b8c5ff1a!important;color:#8e9aba!important}
-#owner-contact{background:radial-gradient(ellipse at 12% 0%,#ff5ac822,transparent 45%),linear-gradient(135deg,#11172d,#15122c 60%,#0c2430)!important;border-color:#b8c5ff24!important;box-shadow:0 24px 60px #0007!important}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #5ef4df;outline-offset:4px}
-@media(max-width:720px){.hero{padding-top:54px}.search{padding:8px}.features .feature{border-radius:18px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orb{transition:none!important}.features .feature,.search button,.download{transition:none!important}.features .feature:hover{transform:none}}
-</style>
-
-<style id="downloadino-true-rainbow-background">
-:root{color-scheme:dark;--finish-ink:#fbfaff;--finish-muted:#c6c4e3;--finish-edge:#ffffff24}
-html{scroll-behavior:smooth;background:#070713}
-body{position:relative;isolation:isolate;min-height:100vh;overflow-x:hidden;background:#070713!important;color:#fbfaff!important}
-body:before{content:"";position:fixed;z-index:-2;inset:-15%;pointer-events:none;opacity:1;background:radial-gradient(ellipse at 12% 18%,#ff55773b 0%,transparent 30%),radial-gradient(ellipse at 35% 4%,#ff9b5428 0%,transparent 26%),radial-gradient(ellipse at 51% 12%,#ffe66d20 0%,transparent 25%),radial-gradient(ellipse at 66% 34%,#69edb52b 0%,transparent 30%),radial-gradient(ellipse at 85% 18%,#54dfff36 0%,transparent 29%),radial-gradient(ellipse at 76% 67%,#7f8cff3b 0%,transparent 33%),radial-gradient(ellipse at 34% 82%,#e879f932 0%,transparent 34%),linear-gradient(135deg,#070713 0%,#11102b 48%,#090b1c 100%);filter:saturate(1.22);animation:aurora-drift 18s ease-in-out infinite alternate}
-body:after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#ffffff 0.7px,transparent .7px);background-size:25px 25px;mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 100%)}
-.wrap{position:relative;z-index:1}
-.nav{background:#101126a8!important;border:1px solid #ffffff20!important;backdrop-filter:blur(20px);box-shadow:0 18px 50px #0004}
-.logo{color:#fff!important}.logo b{background:linear-gradient(90deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero{background:linear-gradient(135deg,#17152fe8,#10152be8 55%,#21132ee8)!important;border:1px solid #ffffff2b!important;box-shadow:0 35px 100px #0008,inset 0 1px #ffffff24!important;backdrop-filter:blur(16px)}
-.hero:before{opacity:.4;filter:blur(25px)}
-.hero h1 span{background:linear-gradient(90deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9);background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rainbow-flow 8s linear infinite}
-.hero p,.hero>p{color:#c6c4e3!important}
-.search{background:#090a1bd9!important;border:1px solid #ffffff35!important;box-shadow:0 25px 70px #0008,inset 0 1px #ffffff12!important}
-.search input{color:#fff!important}.search input::placeholder{color:#aeb0cf!important}
-.search button,.download,.ad-email{background:linear-gradient(110deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9)!important;background-size:250% 250%!important;color:#111026!important;box-shadow:0 12px 30px #8d63ff30!important}
-.features .feature{background:linear-gradient(145deg,#17172fe8,#0c1022ed)!important;border-color:#ffffff22!important;color:#fbfaff!important}
-.features .feature h3{color:#fbfaff!important}.features .feature p{color:#c6c4e3!important}
-#result{background:linear-gradient(145deg,#141a32f5,#17112cf5)!important;border-color:#54dfff55!important;color:#fbfaff!important}
-#result .notice{color:#d2d2ed!important}
-#ad-contact-shared{background:linear-gradient(125deg,#20142feF,#12172ff2 54%,#10252ff2)!important;border:1px solid #ffffff2b!important;color:#fbfaff!important;box-shadow:0 28px 75px #0007,inset 0 1px #ffffff1b!important}
-#ad-contact-shared h2{color:#fbfaff!important}#ad-contact-shared p{color:#c6c4e3!important}
-.signature{color:#eeecff!important;border:0!important}.signature p{color:#eeecff!important}
-@keyframes aurora-drift{0%{transform:translate3d(-1%,0,0) scale(1)}100%{transform:translate3d(1%,-1.5%,0) scale(1.06)}}
-@media(max-width:650px){body:before{inset:-8%;animation:none}.hero{background:linear-gradient(145deg,#17152ff2,#10152bf2 55%,#21132ef2)!important}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
-</style>
-<script id="unified-3d-pointer-motion">
-(()=>{const init=()=>{const candidates=[...document.querySelectorAll('main,.hero,.hero-card,.hero-content,.hero-visual,.orb,.visual,.showcase,.intro,.profile-card,.features .feature,.project-grid .project')];const seen=new Set();let count=0;for(const el of candidates){if(seen.has(el)||count>=7)continue;if(el.closest('#owner-contact,#ad-contact-shared,footer,nav,header'))continue;const rect=el.getBoundingClientRect();if(rect.width<140||rect.height<90)continue;seen.add(el);el.classList.add('finish-3d-card');if(!el.parentElement?.classList.contains('finish-3d-stage')){const wrap=document.createElement('div');wrap.className='finish-3d-stage';el.parentNode.insertBefore(wrap,el);wrap.appendChild(el)}el.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='rotateX('+(-y*7).toFixed(2)+'deg) rotateY('+(x*9).toFixed(2)+'deg) translateY(-2px)';el.style.boxShadow='0 24px 50px rgba(52,88,145,.18)'},{passive:true});el.addEventListener('pointerleave',()=>{el.style.transform='';el.style.boxShadow='';},{passive:true});count++} };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();
-</script>
-
-
-<style id="downloadino-ad-illustration-and-favicon-polish">
-/* A custom dimensional megaphone replaces the abstract orb */
-#ad-contact-shared .ad-visual{position:relative;isolation:isolate;flex:0 0 clamp(130px,22vw,220px);height:clamp(130px,22vw,220px);display:grid;place-items:center;perspective:800px;overflow:visible}
-#ad-contact-shared .ad-visual:before{content:"";position:absolute;inset:12%;border-radius:50%;background:conic-gradient(from 10deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9,#ff5577);filter:blur(27px);opacity:.28;z-index:-1}
-#ad-contact-shared .ad-megaphone{position:relative;width:145px;height:115px;transform:rotate(-17deg) rotateY(-13deg);filter:drop-shadow(0 20px 15px #05071999);animation:megaphone-float 5s ease-in-out infinite}
-#ad-contact-shared .mega-body{position:absolute;left:15px;top:25px;width:80px;height:58px;background:linear-gradient(145deg,#fff0a6 0%,#ff9b54 18%,#ff5577 52%,#a35bff 100%);clip-path:polygon(0 28%,100% 0,100% 100%,0 72%);border-radius:8px;box-shadow:inset 0 3px 8px #ffffff80}
-#ad-contact-shared .mega-mouth{position:absolute;right:0;top:10px;width:62px;height:88px;border-radius:12px 24px 24px 12px;background:linear-gradient(130deg,#8af8ff,#54dfff 35%,#7f8cff 70%,#e879f9);clip-path:polygon(0 20%,100% 0,100% 100%,0 80%);box-shadow:inset 0 4px 10px #ffffff9c}
-#ad-contact-shared .mega-handle{position:absolute;left:36px;top:74px;width:23px;height:43px;border-radius:5px 5px 10px 10px;transform:skew(-12deg);background:linear-gradient(90deg,#69edb5,#2bbaae 70%,#167f91);box-shadow:inset 3px 0 5px #ffffff80}
-#ad-contact-shared .mega-grip{position:absolute;left:27px;top:77px;width:36px;height:9px;border-radius:6px;background:linear-gradient(90deg,#ffe66d,#ff9b54);transform:rotate(2deg)}
-#ad-contact-shared .ad-spark{position:absolute;font-size:28px;font-weight:900;text-shadow:0 0 18px currentColor;animation:sparkle 3s ease-in-out infinite}
-#ad-contact-shared .ad-spark-one{top:10%;right:9%;color:#ffe66d}
-#ad-contact-shared .ad-spark-two{top:25%;left:6%;color:#54dfff;font-size:36px;animation-delay:.6s}
-#ad-contact-shared .ad-spark-three{bottom:13%;right:12%;color:#e879f9;font-size:22px;animation-delay:1s}
-#ad-contact-shared .ad-mini-label{position:absolute;bottom:3%;left:50%;transform:translateX(-50%) rotate(-3deg);white-space:nowrap;padding:6px 12px;border:1px solid #ffffff38;border-radius:999px;background:linear-gradient(100deg,#ff5577,#ff9b54,#ffe66d,#69edb5,#54dfff,#7f8cff,#e879f9);color:#171026;font-size:10px;font-weight:950;letter-spacing:.16em;box-shadow:0 8px 20px #0004}
-#ad-contact-shared .ad-email{cursor:pointer}
-@keyframes megaphone-float{0%,100%{transform:translateY(0) rotate(-17deg) rotateY(-13deg)}50%{transform:translateY(-8px) rotate(-12deg) rotateY(4deg)}}
-@media(max-width:650px){#ad-contact-shared .ad-visual{flex-basis:auto;width:145px;height:145px}#ad-contact-shared .ad-megaphone{transform:scale(.8) rotate(-17deg)}}
-@media(prefers-reduced-motion:reduce){#ad-contact-shared .ad-megaphone,#ad-contact-shared .ad-spark{animation:none!important}}
-</style>
-\n
-<style id="downloadino-ad-clean-redesign">
-/* Minimal, polished floating download tile instead of the busy megaphone */
-#ad-contact-shared{display:flex;align-items:center;gap:clamp(22px,4vw,46px);padding:clamp(24px,4vw,42px)!important;border-radius:28px!important;overflow:hidden;position:relative}
-#ad-contact-shared:after{content:"";position:absolute;inset:auto -8% -85% 35%;height:190%;pointer-events:none;background:radial-gradient(ellipse,#7c5cff20,transparent 65%)}
-#ad-contact-shared .ad-visual{flex:0 0 clamp(120px,18vw,178px);width:clamp(120px,18vw,178px);height:clamp(120px,18vw,178px);display:grid;place-items:center;overflow:visible;perspective:900px}
-#ad-contact-shared .ad-visual:before{inset:12%;border-radius:42%;background:conic-gradient(from 120deg,#ff6bb5,#ffb86b,#ffe978,#70f0c2,#65dcff,#8d85ff,#d78cff,#ff6bb5);filter:blur(24px);opacity:.24}
-#ad-contact-shared .ad-megaphone{width:100px;height:100px;left:auto;top:auto;transform:rotate(-9deg) rotateY(-12deg);border:1px solid #ffffff75;border-radius:27px;background:linear-gradient(145deg,#ffffff45,#ffffff08 44%,#ffffff18);box-shadow:inset 1px 1px 1px #ffffffa3,inset -10px -12px 24px #07071955,0 22px 35px #02030d75;backdrop-filter:blur(12px);animation:download-tile-float 6s ease-in-out infinite}
-#ad-contact-shared .ad-megaphone:before{content:"";position:absolute;inset:8px;border-radius:20px;background:linear-gradient(145deg,#ff6bb5 0%,#a17cff 48%,#5de4ef 100%);opacity:.95;box-shadow:inset 0 1px 8px #ffffff65}
-#ad-contact-shared .ad-megaphone:after{content:"↓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:800 58px/1 system-ui,sans-serif;text-shadow:0 3px 12px #28104c66;transform:translateY(-3px)}
-#ad-contact-shared .mega-mouth,#ad-contact-shared .mega-body,#ad-contact-shared .mega-handle,#ad-contact-shared .mega-grip{display:none}
-#ad-contact-shared .ad-spark{font-size:18px;opacity:.75}
-#ad-contact-shared .ad-spark-one{top:12%;right:5%}
-#ad-contact-shared .ad-spark-two{top:19%;left:4%;font-size:23px}
-#ad-contact-shared .ad-spark-three{bottom:13%;right:9%;font-size:16px}
-#ad-contact-shared .ad-mini-label{bottom:0%;font-size:9px;letter-spacing:.12em;padding:5px 10px;transform:translateX(-50%);background:#17142b;border-color:#ffffff25;color:#e7e2ff;box-shadow:0 8px 20px #0003}
-#ad-contact-shared .ad-copy{position:relative;z-index:1;flex:1;min-width:0}
-#ad-contact-shared .ad-kicker{display:inline-flex;align-items:center;gap:8px;color:#d5c7ff;font-size:.75rem;font-weight:800;letter-spacing:.14em}
-#ad-contact-shared .ad-kicker:before{content:"";width:18px;height:2px;border-radius:9px;background:linear-gradient(90deg,#ff6bb5,#7bdeff)}
-#ad-contact-shared h2{letter-spacing:-.035em}
-#ad-contact-shared .ad-email{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border-radius:14px;padding:13px 20px;transition:transform .2s,filter .2s;position:relative;z-index:2}
-#ad-contact-shared .ad-email:hover{transform:translateY(-2px);filter:brightness(1.08)}
-@keyframes download-tile-float{0%,100%{transform:translateY(0) rotate(-9deg) rotateY(-12deg)}50%{transform:translateY(-5px) rotate(-5deg) rotateY(4deg)}}
-@media(max-width:600px){#ad-contact-shared{flex-direction:column;text-align:center;gap:18px}#ad-contact-shared .ad-visual{flex-basis:125px;width:125px;height:125px}#ad-contact-shared .ad-megaphone{width:88px;height:88px}#ad-contact-shared .ad-kicker{justify-content:center}#ad-contact-shared .ad-email{width:100%;box-sizing:border-box}}
-@media(prefers-reduced-motion:reduce){#ad-contact-shared .ad-megaphone{animation:none!important}}
-</style>
-
-
-<style id="downloadino-fresh-visual">
-/* Replace the previous illustration with a cleaner 3D media stack */
-#ad-contact-shared .ad-visual{position:relative;isolation:isolate;flex:0 0 clamp(130px,20vw,190px);width:clamp(130px,20vw,190px);height:clamp(130px,20vw,190px);display:grid;place-items:center;perspective:900px;overflow:visible}
-#ad-contact-shared .ad-visual:before{content:"";position:absolute;inset:17%;border-radius:50%;background:conic-gradient(#ff6eb5,#ffbd72,#fff08b,#69edb5,#5cddff,#8a82ff,#df8cff,#ff6eb5);filter:blur(28px);opacity:.23}
-#ad-contact-shared .ad-megaphone{position:relative;width:100px;height:112px;left:auto;top:auto;border-radius:22px;transform:rotate(-9deg) rotateY(-15deg);background:linear-gradient(145deg,#ffffff52,#ffffff08 45%,#ffffff19);border:1px solid #ffffff70;box-shadow:inset 1px 1px 1px #ffffff9c,inset -10px -10px 24px #08091b66,0 25px 36px #03040f75;backdrop-filter:blur(14px);animation:media-stack-float 5.5s ease-in-out infinite}
-#ad-contact-shared .ad-megaphone:before{content:"";position:absolute;inset:9px;border-radius:15px;background:linear-gradient(145deg,#ff6eb5 0%,#8b79ff 48%,#50dff0 100%);box-shadow:inset 0 1px 8px #ffffff8a}
-#ad-contact-shared .ad-megaphone:after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:900 37px/1 system-ui;text-shadow:0 3px 14px #25104d80;transform:translateX(2px)}
-#ad-contact-shared .mega-mouth,#ad-contact-shared .mega-body,#ad-contact-shared .mega-handle,#ad-contact-shared .mega-grip{display:none}
-#ad-contact-shared .ad-spark{font-size:17px;opacity:.8}
-#ad-contact-shared .ad-spark-one{top:10%;right:7%;color:#ffe88c}
-#ad-contact-shared .ad-spark-two{top:20%;left:6%;font-size:24px;color:#69e8ff}
-#ad-contact-shared .ad-spark-three{bottom:14%;right:8%;font-size:16px;color:#df8cff}
-#ad-contact-shared .ad-mini-label{bottom:1%;font-size:9px;letter-spacing:.12em;padding:5px 11px;background:#11152a;border-color:#ffffff30;color:#f4efff;box-shadow:0 8px 22px #0004}
-@keyframes media-stack-float{0%,100%{transform:translateY(0) rotate(-9deg) rotateY(-15deg)}50%{transform:translateY(-6px) rotate(-5deg) rotateY(7deg)}}
-@media(max-width:600px){#ad-contact-shared .ad-visual{flex-basis:130px;width:130px;height:130px}#ad-contact-shared .ad-megaphone{width:88px;height:98px}}
-@media(prefers-reduced-motion:reduce){#ad-contact-shared .ad-megaphone{animation:none!important}}
-</style>
-
- 
-<style id="snapinsta-inspired-refresh">
-:root{--brand:#16885a;--brand-dark:#116b47;--ink:#20252b;--muted:#6d7782;--line:#e5e9ed;--surface:#fff;--soft:#f5f8f6;--night:#f4f7f5}
-html{background:#f7f9f8;color-scheme:light}
-body{background:#f7f9f8!important;color:var(--ink)!important;font-family:Vazirmatn,Tahoma,sans-serif}
-body:before{position:fixed;inset:0;z-index:-2;content:"";background:radial-gradient(ellipse at 10% 5%,#d9f4e6 0,transparent 28%),radial-gradient(ellipse at 92% 12%,#e5f0ff 0,transparent 25%),#f7f9f8!important;opacity:1!important;animation:none!important}
-body:after{display:none}
-.orb{display:none}
-.wrap{max-width:1080px;padding:20px 22px 50px}
-.nav{position:relative;z-index:2;background:#fff!important;border:1px solid #e6ebe8!important;border-radius:15px;padding:15px 20px;box-shadow:0 5px 22px #182a1b08;backdrop-filter:none}
-.logo{color:#20252b!important;font-size:1.5rem}.logo b{background:none!important;color:var(--brand)!important;animation:none}
-.nav-spark{color:var(--brand);text-shadow:none;animation:none}
-.hero{margin:28px auto 0;max-width:900px;padding:clamp(32px,6vw,65px) clamp(15px,4vw,48px) 38px;border:1px solid #e2eae5!important;border-radius:22px;background:#fff!important;box-shadow:0 16px 50px #23382a0b!important;overflow:visible}
-.hero:before,.hero:after{display:none}
-.eyebrow{display:inline-flex;background:#eaf7ef!important;border:1px solid #d4eddd!important;color:#14764c!important;border-radius:999px;padding:7px 12px;font-size:.8rem;letter-spacing:0}
-.eyebrow-dot{background:#21a66b;box-shadow:0 0 0 4px #21a66b1a}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.4;color:#1d2923;letter-spacing:-.035em;margin:20px auto 12px}
-.hero h1 span{background:none!important;color:var(--brand)!important;animation:none}
-.hero>p{color:#69756e!important;font-size:1rem;max-width:610px;margin:0 auto 24px}
-.search{max-width:730px;background:#f7faf8!important;border:1px solid #dce5df!important;border-radius:15px;padding:7px;box-shadow:0 6px 18px #152a1b08!important;backdrop-filter:none}
-.search:focus-within{border-color:#60b98b!important;box-shadow:0 0 0 4px #16885a12!important}
-.search input{color:#252d28!important;text-align:left;direction:ltr;min-height:52px;padding:12px 15px}
-.search input::placeholder{color:#89958e}
-.search button,.download{background:var(--brand)!important;color:white!important;border-radius:11px;box-shadow:none!important;font-weight:800;min-height:48px}
-.search button:hover,.download:hover,.ad-email:hover{background:var(--brand-dark)!important;filter:none;transform:translateY(-1px)}
-#result{max-width:730px;border:1px solid #dce5df!important;background:#f7faf8!important;border-radius:15px;color:#20252b;box-shadow:none!important}
-#result .notice{color:#58645c!important}
-.type{background:#e5f5eb!important;color:#126e45!important;border-color:#ccebd8!important}
-.platforms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;max-width:900px;margin:22px auto 0}
-.platform-chip{display:grid;grid-template-columns:42px 1fr;grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:16px;border:1px solid #e3e9e5;border-radius:14px;background:#fff;box-shadow:0 4px 15px #17291c05}
-.platform-chip>span{grid-row:1/3;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#eaf7ef;color:var(--brand);font-size:1.25rem;font-weight:800}
-.platform-chip strong{font-size:.94rem}.platform-chip small{font-size:.72rem;color:#8a948e;direction:ltr;text-align:right}
-.howto,.faq{max-width:900px;margin:62px auto 0}
-.section-heading{text-align:center;margin-bottom:24px}.section-kicker{display:inline-block;color:var(--brand);font-size:.82rem;font-weight:800;margin-bottom:8px}.section-heading h2{margin:0;color:#202b24;font-size:clamp(1.5rem,3.5vw,2.1rem)}.section-heading p{color:#738078;line-height:1.9;margin:9px auto 0}
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.step{position:relative;padding:24px;border:1px solid #e3e9e5;border-radius:16px;background:#fff;box-shadow:0 5px 20px #17291c05}
-.step-number{position:absolute;top:16px;left:17px;color:#9aa79f;font-size:.85rem;font-weight:800}
-.step-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:#eaf7ef;color:var(--brand);font-size:1.35rem;font-weight:800;margin-bottom:18px}
-.step h3{margin:0 0 8px;font-size:1.02rem;color:#26322b}.step p{margin:0;color:#738078;font-size:.88rem;line-height:1.95}
-.faq details{padding:18px 20px;border:1px solid #e3e9e5;border-radius:13px;background:#fff;margin-top:10px}
-.faq summary{cursor:pointer;font-weight:700;color:#2b352f}.faq details p{color:#69766e;line-height:1.95;margin:12px 0 0;font-size:.92rem}
-#ad-contact-shared{max-width:900px;margin:52px auto 0;background:#fff!important;border:1px solid #e3e9e5!important;box-shadow:0 8px 25px #17291c05!important;border-radius:17px}
-#ad-contact-shared:before{display:none}.ad-copy h2{color:#202b24}.ad-copy p{color:#738078}.ad-kicker{color:var(--brand)}.ad-email{background:var(--brand)!important;color:#fff!important;box-shadow:none!important}
-.ad-orbit{animation:none;box-shadow:inset -18px -18px 35px #07081722,inset 12px 12px 28px #ffffff66,0 0 25px #16885a1a}
-.signature{color:#6f7c73!important}.signature-line{background:linear-gradient(90deg,transparent,#b8d8c5,transparent)}.heart{animation:none;text-shadow:none}
-.footer{color:#7b877f!important}
-@media(max-width:720px){.wrap{padding:13px 13px 35px}.nav{padding:12px 14px}.hero{margin-top:16px;border-radius:17px;padding:32px 15px 25px}.search{flex-direction:column}.search input{width:100%;min-height:48px}.search button{width:100%;min-height:49px}.platforms{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.platform-chip{padding:12px;grid-template-columns:36px 1fr;column-gap:9px}.platform-chip>span{width:36px;height:36px}.steps{grid-template-columns:1fr}.step{padding:20px}.howto,.faq{margin-top:42px}#ad-contact-shared{flex-direction:column-reverse;text-align:center;padding:23px 18px}.ad-orbit{width:100px}.signature{gap:8px}.signature-line{width:20px}}
+<style id="downloadino-english-3d">
+:root{--green:#147d52;--ink:#17231c;--muted:#64746b;--line:#e0e9e3;--bg:#f3f7f4}
+*{box-sizing:border-box}html{background:var(--bg);color-scheme:light;scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 8% 5%,#d9f7e6 0,transparent 28%),radial-gradient(ellipse at 93% 10%,#dce8ff 0,transparent 27%),#f3f7f4!important;color:var(--ink)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(#1d51331a .7px,transparent .7px);background-size:19px 19px;mask-image:linear-gradient(#000,transparent 80%)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.orb{position:fixed;z-index:-1;width:270px;height:270px;border-radius:50%;right:4%;top:18%;background:linear-gradient(145deg,#64e5ad,#54b9ec 55%,#9b8dff);filter:blur(2px);opacity:.2;box-shadow:inset -30px -30px 65px #263e6860,inset 20px 20px 50px #ffffff99,0 35px 90px #5ca6a055;pointer-events:none}
+.wrap{max-width:1120px;margin:auto;padding:22px 24px 35px}.nav{display:flex;align-items:center;justify-content:space-between;background:#ffffffc9;border:1px solid #ffffffd9;border-radius:18px;padding:14px 20px;box-shadow:0 8px 25px #183a2410;backdrop-filter:blur(16px)}
+.logo{font-size:1.4rem;font-weight:900;letter-spacing:-.07em;color:#17231c;text-decoration:none}.logo span{color:#16885a}.badge{font-size:.72rem;letter-spacing:.1em;font-weight:800;color:#16734c;background:#e3f7eb;border:1px solid #c7ecd6;border-radius:999px;padding:8px 12px}
+.hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:18px;margin-top:22px;padding:clamp(28px,5vw,58px);min-height:480px;overflow:hidden;border:1px solid #ffffffed;border-radius:30px;background:linear-gradient(135deg,#fff 0%,#fbfdfb 60%,#f0f7ff 100%);box-shadow:0 25px 70px #1b382515,inset 0 1px #fff;isolation:isolate}
+.hero:before{content:"";position:absolute;z-index:-1;width:390px;height:390px;right:-180px;top:-220px;border-radius:50%;background:linear-gradient(135deg,#a8f0c7,#a8d6ff,#d4baff);filter:blur(18px);opacity:.42}
+.hero-copy{position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#18784f;background:#e8f8ef;border:1px solid #d3efdf;border-radius:999px;padding:8px 12px;font-size:.7rem;font-weight:850;letter-spacing:.12em}.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:#19a568;box-shadow:0 0 0 4px #19a56820}
+.hero h1{margin:22px 0 16px;font-size:clamp(2.35rem,4.7vw,4.25rem);line-height:1.12;letter-spacing:-.065em;font-weight:850;color:#192a20}.hero h1 span{display:inline-block;color:#16885a;background:linear-gradient(100deg,#16885a,#248ec4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.hero-copy>p{max-width:530px;color:#69786f;line-height:1.85;font-size:1.02rem}
+.search{display:flex;gap:8px;max-width:630px;margin-top:25px;padding:7px;border:1px solid #d8e5dc;border-radius:15px;background:#fff;box-shadow:0 12px 28px #173c2410;transition:box-shadow .2s,border-color .2s}.search:focus-within{border-color:#63b78a;box-shadow:0 0 0 4px #16885a12,0 12px 28px #173c2410}.search input{flex:1;min-width:0;min-height:50px;padding:12px;border:0;outline:0;background:transparent;color:#1c2b22;font:inherit;font-size:.9rem;text-align:left;direction:ltr}.search input::placeholder{color:#98a39b}.search button,.download{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:49px;padding:12px 19px;border:0;border-radius:11px;background:linear-gradient(135deg,#16885a,#116e4a);color:white;font:inherit;font-size:.9rem;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 8px 18px #16885a27;transition:transform .2s,box-shadow .2s}.search button:hover,.download:hover{transform:translateY(-2px);box-shadow:0 12px 23px #16885a35}.search button:disabled{opacity:.65;cursor:wait;transform:none}.privacy-note{display:flex;align-items:center;gap:8px;font-size:.78rem!important;color:#77867c!important;margin-top:14px!important}.privacy-note span:first-child{color:#16885a;font-weight:900}
+.hero-visual{position:relative;display:grid;place-items:center;min-height:350px;perspective:1000px;transform-style:preserve-3d}.visual-glow{position:absolute;width:240px;height:240px;border-radius:50%;background:conic-gradient(from 180deg,#6ce6a7,#73c8fa,#b5a4ff,#f7b9d5,#6ce6a7);filter:blur(35px);opacity:.4}
+.visual-ring{position:absolute;width:310px;height:120px;border:1px solid #5a9b7b55;border-radius:50%;transform:rotate(-27deg) rotateX(62deg);box-shadow:0 0 22px #70b9ff20}.ring-b{width:355px;height:145px;transform:rotate(32deg) rotateX(62deg);border-color:#8e8be866}
+.video-card{position:absolute;width:205px;border:1px solid #ffffffd9;border-radius:23px;background:#ffffffdc;box-shadow:0 30px 55px #253e3c27,inset 0 1px #fff;backdrop-filter:blur(18px);transform-style:preserve-3d}.card-back{height:230px;right:8%;top:19%;transform:rotate(10deg) rotateY(-19deg) translateZ(-40px);padding:16px;background:linear-gradient(145deg,#f3fbff,#e7f4ef);box-shadow:0 25px 50px #223f3522}.card-dots{color:#98b2a4;letter-spacing:3px}.mini-lines{height:7px;width:70%;margin-top:160px;border-radius:8px;background:#d2e7da;box-shadow:0 13px #e0ece5}
+.card-front{z-index:2;left:8%;top:16%;padding:10px;transform:rotate(-8deg) rotateY(13deg) translateZ(45px);animation:card-float 6s ease-in-out infinite}.video-art{position:relative;height:245px;overflow:hidden;border-radius:16px;background:radial-gradient(circle at 25% 25%,#fff9,transparent 22%),radial-gradient(circle at 80% 75%,#edfff0aa,transparent 30%),linear-gradient(145deg,#7bd6ad,#74b9e6 48%,#9e8de9);box-shadow:inset 0 1px #ffffffaa}.video-art:before,.video-art:after{content:"";position:absolute;border-radius:50%;background:#ffffff38;filter:blur(1px)}.video-art:before{width:155px;height:155px;right:-35px;top:-20px}.video-art:after{width:115px;height:115px;left:-20px;bottom:10px;background:#f4c5df66}.play-icon{position:absolute;z-index:2;left:50%;top:50%;display:grid;place-items:center;width:60px;height:60px;padding-left:4px;border:1px solid #ffffffb5;border-radius:20px;background:#ffffff6b;color:#fff;font-size:1.35rem;transform:translate(-50%,-50%);box-shadow:0 10px 30px #203c3b25;backdrop-filter:blur(8px)}.video-meta{display:flex;align-items:center;gap:8px;padding:12px 4px 4px}.avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#16885a,#83d6bd)}.meta-lines{display:grid;gap:5px;flex:1}.meta-lines i{width:72px;height:5px;border-radius:5px;background:#d9e5dc}.meta-lines i+ i{width:48px;background:#e7eee9}.heart-icon{font-size:1.45rem;color:#e77d9d}
+.floating-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:8px;padding:11px 14px;border:1px solid #ffffffdb;border-radius:13px;background:#ffffffdf;color:#2d4939;font-size:.76rem;box-shadow:0 14px 28px #233c2d20,inset 0 1px #fff;backdrop-filter:blur(14px)}.chip-download{right:1%;bottom:17%;transform:rotate(5deg) translateZ(80px);color:#16885a;font-size:1.25rem}.chip-hd{left:0;top:10%;transform:rotate(-6deg);color:#6e65bd}.sparkle{position:absolute;color:#5eaf8a;text-shadow:0 4px 16px #5eaf8a55}.sparkle-one{right:8%;top:8%;font-size:2rem}.sparkle-two{left:6%;bottom:9%;font-size:2.8rem}
+.trust-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:17px 0 0}.trust-row>div{display:flex;align-items:center;gap:12px;padding:17px 19px;border:1px solid #e1e9e3;border-radius:16px;background:#ffffffbd;box-shadow:0 8px 22px #203b2a08}.trust-icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:13px;background:#e7f7ed;color:#16885a;font-size:1.3rem;font-weight:800}.trust-row b,.trust-row small{display:block}.trust-row b{font-size:.86rem}.trust-row small{margin-top:4px;color:#7c8980;font-size:.75rem}
+.howto,.faq{max-width:950px;margin:72px auto 0}.section-heading{text-align:center;margin-bottom:26px}.section-kicker{display:block;color:#16885a;font-size:.72rem;font-weight:900;letter-spacing:.16em;margin-bottom:10px}.section-heading h2{margin:0;color:#1d2c22;font-size:clamp(1.7rem,3.4vw,2.35rem);letter-spacing:-.05em}.section-heading p{color:#748178;line-height:1.8}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.step{position:relative;padding:25px;border:1px solid #e0e9e3;border-radius:19px;background:linear-gradient(145deg,#fff,#f8fbf9);box-shadow:0 12px 28px #1d39250b,inset 0 1px #fff;transition:transform .25s,box-shadow .25s;transform-style:preserve-3d}.step:hover{transform:perspective(900px) rotateX(2deg) translateY(-5px);box-shadow:0 20px 36px #1d392516}.step-number{position:absolute;right:18px;top:16px;color:#a0b0a5;font-size:.82rem;font-weight:900}.step-icon{display:grid;place-items:center;width:48px;height:48px;margin-bottom:20px;border-radius:15px;background:linear-gradient(145deg,#e2f8ea,#e7f2ff);color:#16885a;font-size:1.4rem;box-shadow:inset 0 1px #fff,0 7px 15px #203d2b0b}.step h3{margin:0 0 9px;font-size:1.02rem}.step p{margin:0;color:#748178;font-size:.88rem;line-height:1.85}
+.faq details{margin-top:10px;padding:18px 20px;border:1px solid #e0e9e3;border-radius:14px;background:#ffffffc9;box-shadow:0 5px 18px #203b2a05}.faq summary{cursor:pointer;font-weight:750;color:#2b3b30}.faq details p{margin:12px 0 0;color:#68786e;font-size:.9rem;line-height:1.9}
+#result{display:none;max-width:630px;margin:18px 0 0;padding:19px;border:1px solid #d5e9dc;border-radius:15px;background:#f7fcf8;box-shadow:0 12px 25px #173c240a}#result .notice{color:#5c6f62;font-size:.9rem;line-height:1.8}.result-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.type{padding:6px 10px;border:1px solid #ccebd8;border-radius:999px;background:#e5f6eb;color:#126b45;font-size:.68rem;font-weight:850;letter-spacing:.07em}.download[hidden]{display:none!important}
+.footer{margin-top:70px;padding:27px 0 0;border-top:1px solid #dfe8e1;text-align:center;color:#7b887f;font-size:.8rem}.footer-logo{font-size:1.2rem}.footer p{margin:8px 0}
+@keyframes card-float{0%,100%{transform:rotate(-8deg) rotateY(13deg) translate3d(0,0,45px)}50%{transform:rotate(-5deg) rotateY(8deg) translate3d(0,-8px,55px)}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;min-height:0;padding:35px 26px}.hero-visual{min-height:330px;grid-row:1}.hero-copy{grid-row:2}.hero h1{font-size:clamp(2.3rem,9vw,3.5rem)}.card-front{left:23%;top:12%}.card-back{right:22%;top:14%}.trust-row{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.howto,.faq{margin-top:52px}}
+@media(max-width:520px){.wrap{padding:12px 12px 25px}.nav{padding:12px 14px}.hero{padding:25px 17px;border-radius:22px}.hero-visual{min-height:290px;transform:scale(.88);margin:-12px -12px -5px}.video-card{width:180px}.video-art{height:205px}.card-front{left:16%;top:14%}.card-back{right:14%;top:16%}.chip-download{right:0;bottom:10%}.chip-hd{left:0;top:5%}.search{flex-direction:column}.search button{width:100%}.privacy-note{flex-wrap:wrap}.trust-row>div{padding:14px}.steps .step{padding:22px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
+</head>
+<body>
+  <div class="orb" id="orb" aria-hidden="true"></div>
+  <main class="wrap">
+    <nav class="nav"><a class="logo" href="/" aria-label="Downloadino home">Download<span>ino</span></a><span class="badge">FREE · NO SIGN-UP</span></nav>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> INSTAGRAM VIDEO DOWNLOADER</div>
+        <h1>Save your favorite moments.<br><span>In just a few clicks.</span></h1>
+        <p>Download public Instagram Reels and video posts in MP4 format. Paste a link below to get started.</p>
+        <form class="search" id="form">
+          <label class="sr-only" for="url">Instagram post or Reel URL</label>
+          <input id="url" type="url" required placeholder="Paste Instagram link here…" aria-label="Instagram post or Reel URL" autocomplete="url" spellcheck="false">
+          <button type="submit">Download <span aria-hidden="true">↓</span></button>
+        </form>
+        <p class="privacy-note"><span aria-hidden="true">✓</span> No account required <span>·</span> Public links only</p>
+        <div id="result" aria-live="polite" aria-atomic="true">
+          <div class="result-head"><strong id="title">Your download</strong><span class="type" id="type">MP4 VIDEO</span></div>
+          <p class="notice">Paste a public Instagram Reel or post link to begin.</p>
+          <a class="download" id="safe-open-source" href="#" target="_blank" rel="noopener noreferrer" hidden>Open original post</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-glow"></div><div class="visual-ring ring-a"></div><div class="visual-ring ring-b"></div>
+        <div class="video-card card-back"><span class="card-dots">•••</span><div class="mini-lines"></div></div>
+        <div class="video-card card-front"><div class="video-art"><span class="play-icon">▶</span></div><div class="video-meta"><span class="avatar"></span><span class="meta-lines"><i></i><i></i></span><span class="heart-icon">♡</span></div></div>
+        <div class="floating-chip chip-download">↓ <b>MP4</b></div><div class="floating-chip chip-hd">✦ <b>HD VIDEO</b></div>
+        <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✧</div>
+      </div>
+    </section>
+    <section class="trust-row" aria-label="Features">
+      <div><span class="trust-icon">↧</span><span><b>Direct downloads</b><small>MP4 video files</small></span></div>
+      <div><span class="trust-icon">◈</span><span><b>Simple &amp; fast</b><small>Paste, download, done</small></span></div>
+      <div><span class="trust-icon">◎</span><span><b>Privacy first</b><small>No Instagram password</small></span></div>
+    </section>
+    <section class="howto" id="howto">
+      <div class="section-heading"><span class="section-kicker">THREE SIMPLE STEPS</span><h2>How to download</h2><p>Save content you have permission to download in a few easy steps.</p></div>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><div class="step-icon">↗</div><h3>Copy the link</h3><p>Open a public Reel or video post on Instagram and copy its link.</p></article>
+        <article class="step"><span class="step-number">02</span><div class="step-icon">⌁</div><h3>Paste it here</h3><p>Paste the link into the box above and press Download.</p></article>
+        <article class="step"><span class="step-number">03</span><div class="step-icon">↓</div><h3>Save your video</h3><p>If the post is accessible, your MP4 file will be downloaded to your device.</p></article>
+      </div>
+    </section>
+    <section class="faq" id="faq"><div class="section-heading"><span class="section-kicker">NEED TO KNOW</span><h2>Frequently asked questions</h2></div>
+      <details><summary>Do I need to log in to Instagram?</summary><p>No. Never enter your Instagram password here. Private posts and login-protected content are not supported.</p></details>
+      <details><summary>Why might a download fail?</summary><p>Instagram may restrict automated access, or the post may be private, unavailable, or protected. Only publicly accessible content can be attempted.</p></details>
+      <details><summary>Is Downloadino free?</summary><p>The site is free to use. Availability depends on Instagram access and the resources available to the download service.</p></details>
+      <details><summary>Can I download any public Reel?</summary><p>Not always. Public visibility does not guarantee automated access. Please download only content you own or have permission to save.</p></details>
+    </section>
+    <footer class="footer"><a class="logo footer-logo" href="/">Download<span>ino</span></a><p>For personal use only. Respect creators’ rights and Instagram’s terms.</p><span>© <span id="year"></span> Downloadino</span></footer>
+  </main>
+  <script>
+    const orb=document.getElementById('orb');
+    const form=document.getElementById('form'),input=document.getElementById('url');
+    const result=document.getElementById('result'),title=document.getElementById('title');
+    const type=document.getElementById('type'),notice=document.querySelector('.notice');
+    const button=form.querySelector('button');
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(orb&&!reduced)document.addEventListener('pointermove',e=>{orb.style.transform='translate('+(e.clientX-innerWidth/2)*.025+'px,'+(e.clientY-innerHeight/2)*.025+'px)'},{passive:true});
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();const raw=input.value.trim();let parsed;
+      try{parsed=new URL(raw)}catch(_){return}
+      const host=parsed.hostname.toLowerCase();
+      const valid=parsed.protocol==='https:'&&(host==='instagram.com'||host==='www.instagram.com')&&(/^\\/(reel|reels|p|tv)\\/[A-Za-z0-9_-]+\\/?$/.test(parsed.pathname));
+      if(!valid){result.style.display='block';title.textContent='Invalid Instagram link';type.textContent='CHECK URL';notice.textContent='Enter a valid public Instagram Reel or post URL.';return}
+      button.disabled=true;button.innerHTML='Preparing download… <span aria-hidden="true">◌</span>';result.style.display='none';
+      try{
+        const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/octet-stream, application/json'},body:JSON.stringify({url:parsed.href})});
+        if(!response.ok){let message='Download failed. The post may be private or Instagram may be restricting access.';try{const data=await response.json();if(data&&data.error)message=data.error}catch(_){}throw new Error(message)}
+        const blob=await response.blob();if(!blob.size)throw new Error('The downloaded file was empty. Please try again.');
+        const disposition=response.headers.get('Content-Disposition')||'',match=disposition.match(/filename="?([^";]+)"?/i);
+        const filename=match?match[1]:'downloadino-instagram.mp4';
+        const objectUrl=URL.createObjectURL(blob),a=document.createElement('a');a.href=objectUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(objectUrl),30000);
+        result.style.display='block';title.textContent='Download started';type.textContent='MP4 READY';notice.textContent='Your file was received. Check your browser downloads.';
+      }catch(err){result.style.display='block';title.textContent='Download failed';type.textContent='TRY AGAIN';notice.textContent=err.message||'Could not retrieve the video file.'}
+      finally{button.disabled=false;button.innerHTML='Download <span aria-hidden="true">↓</span>'}
+    });
+  </script>
 </body>
 </html>
