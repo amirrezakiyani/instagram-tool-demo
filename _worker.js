@@ -17,7 +17,7 @@ export default {
     // proxy the real file stream through this same-origin endpoint.
     if (env.DOWNLOADER_API_URL) {
       try {
-        const upstreamBase = String(env.DOWNLOADER_API_URL).replace(/\\/+$/, "");
+        const upstreamBase = String(env.DOWNLOADER_API_URL).replace(/\/+$/, "");
         const upstream = await fetch(upstreamBase + "/api/download", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "video/mp4, application/json" },
