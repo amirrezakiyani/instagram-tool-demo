@@ -159,6 +159,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 .faq details{margin-top:10px;padding:18px 20px;border:1px solid #e0e9e3;border-radius:14px;background:#ffffffc9;box-shadow:0 5px 18px #203b2a05}.faq summary{cursor:pointer;font-weight:750;color:#2b3b30}.faq details p{margin:12px 0 0;color:#68786e;font-size:.9rem;line-height:1.9}
 #result{display:none;max-width:630px;margin:18px 0 0;padding:19px;border:1px solid #d5e9dc;border-radius:15px;background:#f7fcf8;box-shadow:0 12px 25px #173c240a}#result .notice{color:#5c6f62;font-size:.9rem;line-height:1.8}.result-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.type{padding:6px 10px;border:1px solid #ccebd8;border-radius:999px;background:#e5f6eb;color:#126b45;font-size:.68rem;font-weight:850;letter-spacing:.07em}.download[hidden]{display:none!important}
 .footer{margin-top:70px;padding:27px 0 0;border-top:1px solid #dfe8e1;text-align:center;color:#7b887f;font-size:.8rem}.footer-logo{font-size:1.2rem}.footer p{margin:8px 0}
+.ad-slot{display:flex;align-items:center;justify-content:center;width:100%;max-width:970px;min-height:90px;margin:30px auto;padding:10px;box-sizing:border-box;border:1px solid #dfe8e1;border-radius:14px;background:#ffffffa8;overflow:hidden}.ad-slot:empty{display:none}.ad-slot iframe,.ad-slot img{max-width:100%;border:0}.footer-signature{display:block;margin-top:10px;color:#5c6f62;font-weight:700;letter-spacing:.02em}
 @keyframes card-float{0%,100%{transform:rotate(-8deg) rotateY(13deg) translate3d(0,0,45px)}50%{transform:rotate(-5deg) rotateY(8deg) translate3d(0,-8px,55px)}}
 @media(max-width:800px){.hero{grid-template-columns:1fr;min-height:0;padding:35px 26px}.hero-visual{min-height:330px;grid-row:1}.hero-copy{grid-row:2}.hero h1{font-size:clamp(2.3rem,9vw,3.5rem)}.card-front{left:23%;top:12%}.card-back{right:22%;top:14%}.trust-row{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.howto,.faq{margin-top:52px}}
 @media(max-width:520px){.wrap{padding:12px 12px 25px}.nav{padding:12px 14px}.hero{padding:25px 17px;border-radius:22px}.hero-visual{min-height:290px;transform:scale(.88);margin:-12px -12px -5px}.video-card{width:180px}.video-art{height:205px}.card-front{left:16%;top:14%}.card-back{right:14%;top:16%}.chip-download{right:0;bottom:10%}.chip-hd{left:0;top:5%}.search{flex-direction:column}.search button{width:100%}.privacy-note{flex-wrap:wrap}.trust-row>div{padding:14px}.steps .step{padding:22px}}
@@ -200,6 +201,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
       <div><span class="trust-icon">◈</span><span><b>Simple &amp; fast</b><small>Paste, download, done</small></span></div>
       <div><span class="trust-icon">◎</span><span><b>Privacy first</b><small>No Instagram password</small></span></div>
     </section>
+    <div class="ad-slot" id="ad-slot-primary" aria-label="Advertisement"><!-- Add your approved banner ad code here after your publisher account is approved. Use standard banner/native ad code, not popunder code. --></div>
     <section class="howto" id="howto">
       <div class="section-heading"><span class="section-kicker">THREE SIMPLE STEPS</span><h2>How to download</h2><p>Save content you have permission to download in a few easy steps.</p></div>
       <div class="steps">
@@ -208,13 +210,14 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
         <article class="step"><span class="step-number">03</span><div class="step-icon">↓</div><h3>Save your video</h3><p>If the post is accessible, your MP4 file will be downloaded to your device.</p></article>
       </div>
     </section>
+    <div class="ad-slot" id="ad-slot-secondary" aria-label="Advertisement"><!-- Optional second banner placement: add approved ad code here only after checking the network's placement rules. --></div>
     <section class="faq" id="faq"><div class="section-heading"><span class="section-kicker">NEED TO KNOW</span><h2>Frequently asked questions</h2></div>
       <details><summary>Do I need to log in to Instagram?</summary><p>No. Never enter your Instagram password here. Private posts and login-protected content are not supported.</p></details>
       <details><summary>Why might a download fail?</summary><p>Instagram may restrict automated access, or the post may be private, unavailable, or protected. Only publicly accessible content can be attempted.</p></details>
       <details><summary>Is Downloadino free?</summary><p>The site is free to use. Availability depends on Instagram access and the resources available to the download service.</p></details>
       <details><summary>Can I download any public Reel?</summary><p>Not always. Public visibility does not guarantee automated access. Please download only content you own or have permission to save.</p></details>
     </section>
-    <footer class="footer"><a class="logo footer-logo" href="/">Download<span>ino</span></a><p>For personal use only. Respect creators’ rights and Instagram’s terms.</p><span>© <span id="year"></span> Downloadino</span></footer>
+    <footer class="footer"><a class="logo footer-logo" href="/">Download<span>ino</span></a><p>For personal use only. Respect creators’ rights and Instagram’s terms.</p><span>© <span id="year"></span> Downloadino. All rights reserved.</span><span class="footer-signature">Designed &amp; developed by Amirreza Kiyani.</span></footer>
   </main>
   <script>
     const orb=document.getElementById('orb');
