@@ -47,6 +47,46 @@ export default {
         }
       }
 
+      // Instagram often exposes progressive MP4 URLs inside its embedded Relay payload,
+      // even when video_url and og:video are absent.
+      if (!mediaUrl) {
+        const shortcode = source.pathname.split("/").filter(Boolean).pop();
+        const needles = ['"code":"' + shortcode + '"', '"code": "' + shortcode + '"'];
+        let codeIndex = -1;
+        for (const needle of needles) {
+          codeIndex = html.indexOf(needle);
+          if (codeIndex !== -1) break;
+        }
+        if (codeIndex !== -1) {
+          const windowText = html.slice(codeIndex, codeIndex + 50000);
+          const versionsMatch = /"video_versions"\s*:\s*\[/.exec(windowText);
+          if (versionsMatch) {
+            const arrayStart = codeIndex + versionsMatch.index + versionsMatch[0].lastIndexOf("[");
+            let depth = 0, inString = false, escaped = false, arrayEnd = -1;
+            for (let i = arrayStart; i < html.length; i++) {
+              const ch = html[i];
+              if (inString) {
+                if (escaped) escaped = false;
+                else if (ch === "\\") escaped = true;
+                else if (ch === '"') inString = false;
+              } else if (ch === '"') inString = true;
+              else if (ch === "[") depth++;
+              else if (ch === "]") {
+                depth--;
+                if (depth === 0) { arrayEnd = i + 1; break; }
+              }
+            }
+            if (arrayEnd > arrayStart) {
+              try {
+                const versions = JSON.parse(html.slice(arrayStart, arrayEnd));
+                const candidate = versions.find(v => typeof v?.url === "string" && v.url.startsWith("https://"));
+                if (candidate) mediaUrl = candidate.url;
+              } catch (_) {}
+            }
+          }
+        }
+      }
+
       if (!mediaUrl) {
         const tags = html.match(/<meta\b[^>]*>/gi) || [];
         for (const tag of tags) {
