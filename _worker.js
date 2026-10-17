@@ -134,11 +134,11 @@ export default {
       const html = await pageResponse.text();
 
       if (format === "image") {
-        const metaTags = html.match(/<meta\\b[^>]*>/gi) || [];
+        const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
         let imageUrl = "";
         for (const tag of metaTags) {
-          if (!/property\\s*=\\s*["']og:image["']/i.test(tag)) continue;
-          const value = tag.match(/content\\s*=\\s*["']([^"']+)["']/i);
+          if (!/property\s*=\s*["']og:image["']/i.test(tag)) continue;
+          const value = tag.match(/content\s*=\s*["']([^"']+)["']/i);
           if (value) { imageUrl = value[1].replace(/&amp;/g, "&"); break; }
         }
         if (!imageUrl) return json({ error: "Instagram did not expose a public cover image for this post." }, 422);
