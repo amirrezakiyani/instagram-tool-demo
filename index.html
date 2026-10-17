@@ -84,14 +84,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 <body>
   <div class="orb" id="orb"></div>
   <main class="wrap">
-    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div><div class="badge">نسخه آزمایشی ۰.۱</div></nav>
+    <nav class="nav"><div class="logo">دانلود<b>ینو</b></div></nav>
     <section class="hero"><div class="eyebrow">سریع، ساده، مدرن</div><h1>لینک اینستاگرام را بده، <span>مرتب تحویل بگیر</span></h1><p>این نسخه برای نمایش طراحی و تجربه کاربری ساخته شده است. لینک عمومی پست، ریلز یا پروفایل را وارد کن.</p>
       <form class="search" id="form"><input id="url" type="url" required placeholder="https://www.instagram.com/..." aria-label="آدرس اینستاگرام"><button type="submit">تحلیل لینک</button></form>
-      <div id="result"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">پیش‌نمایش آزمایشی فعال شد. دانلود واقعی فقط برای محتوای خودت یا محتوایی که اجازه دریافت آن را داری، پس از اتصال سرویس مجاز فعال می‌شود.</p><button class="download" type="button" disabled aria-disabled="true">دانلود واقعی در نسخهٔ آزمایشی غیرفعال است</button></div>
+      <div id="result"><div class="result-head"><strong id="title">لینک آماده بررسی است</strong><span class="type" id="type">محتوای اینستاگرام</span></div><p class="notice">این ابزار لینک را بررسی می‌کند. دانلود مستقیم تنها زمانی فعال می‌شود که منبع، دسترسی مجاز و سرویس دانلود واقعی در دسترس باشند.</p><a class="download" id="safe-open-source" href="#" target="_blank" rel="noopener noreferrer" hidden>بازکردن منبع</a></div>
 
     </section>
     <section class="features"><article class="feature"><h3>طراحی سه‌بعدی</h3><p>پس‌زمینه و عناصر صفحه با حرکت موس واکنش نشان می‌دهند.</p></article><article class="feature"><h3>تشخیص لینک</h3><p>نوع لینک به‌صورت نمایشی از روی آدرس تشخیص داده می‌شود.</p></article><article class="feature"><h3>امن و مسئولانه</h3><p>پردازش آینده فقط برای محتوای مجاز و دارای اجازه انجام خواهد شد.</p></article></section>
-    <footer class="footer">© ۲۰۲۶ دانلودینو · نسخهٔ آزمایشی؛ دانلود واقعی فعال نیست</footer>
+    
   </main>
   <script>
     const orb=document.getElementById('orb'); const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches; let pointerFrame=0; if(orb&&!reduceMotion){document.addEventListener('pointermove',e=>{if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.06}px, ${(e.clientY-innerHeight/2)*.06}px)`;pointerFrame=0})},{passive:true})}
@@ -134,16 +134,35 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #5ef4
 </style>
 
 
-<section id="ad-contact-shared" dir="rtl" aria-label="تبلیغات و همکاری تجاری" style="box-sizing:border-box;width:min(100% - 28px,980px);margin:34px auto 18px;padding:22px 18px;border:1px solid #8b5cf655;border-radius:22px;background:linear-gradient(135deg,#111827,#1e1b4b);color:#f8fafc;text-align:center;box-shadow:0 16px 42px #0002;font-family:inherit">
-  <p style="margin:0 0 7px;color:#c4b5fd;font-size:.92rem;font-weight:700">تبلیغات و همکاری تجاری</p>
-  <h2 style="margin:0 0 8px;font-size:1.35rem;color:inherit">برای تبلیغات با ما در ارتباط باشید</h2>
-  <p style="margin:0 0 16px;color:#e2e8f0">برای معرفی کسب‌وکار، سفارش تبلیغ یا همکاری، از راه‌های زیر تماس بگیرید.</p>
-  <div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap">
-    <a href="tel:+989034153445" style="display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:12px;background:#7c3aed;color:#fff;text-decoration:none;font-weight:700">تماس: 09034153445</a>
-    <a href="mailto:amirreki.5685@gmail.com?subject=%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA%20%D9%88%20%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C" style="display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:12px;border:1px solid #c4b5fd;color:#f5f3ff;text-decoration:none;font-weight:700;overflow-wrap:anywhere">amirreki.5685@gmail.com</a>
-  </div>
-  <div style="margin-top:18px;padding-top:14px;border-top:1px solid #ffffff20;font-weight:800;letter-spacing:.2px">😊 ❤️ امیررضا کیانی</div>
-</section>
+<section id="owner-contact" dir="rtl" aria-label="تبلیغات و همکاری تجاری"><h2>تبلیغات و همکاری تجاری</h2><p>برای تبلیغات و همکاری با امیررضا کیانی در تماس باشید.</p><p><a href="tel:+989034153445">تماس: 09034153445</a>　<a href="mailto:amirreki.5685@gmail.com">ایمیل: amirreki.5685@gmail.com</a></p><div class="owner-signature">ساخته‌شده با عشق ❤️ امیررضا کیانی 😊</div></section>
+
+<style id="unified-light-3d-finish">
+:root{--finish-ink:#17243b;--finish-muted:#52627a;--finish-surface:#ffffff;--finish-edge:#dce7f5;--finish-a:#4779ed;--finish-b:#2bc8b5;--finish-glow:rgba(71,121,237,.22)}
+html{color-scheme:light;scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 8% 5%,rgba(86,174,255,.22),transparent 33%),radial-gradient(ellipse at 90% 22%,rgba(88,231,204,.20),transparent 31%),linear-gradient(145deg,#f4f8ff 0%,#eef7fb 48%,#f8f4ff 100%)!important;color:var(--finish-ink)!important}
+body :is(main,section,article,.card,.feature,.project,.hero-card,.panel,.content-card){color:var(--finish-ink)}
+body :is(p,small,.muted,.subtitle,.description){color:var(--finish-muted)}
+body :is(.card,.feature,.project,.hero-card,.panel,.content-card){background:rgba(255,255,255,.78);border-color:var(--finish-edge);box-shadow:0 12px 32px rgba(48,75,120,.09)}
+body :is(header,nav,.navbar){background:rgba(255,255,255,.84)!important;color:var(--finish-ink)!important;border-color:#dce7f5!important;backdrop-filter:blur(16px)}
+body a{transition:color .2s ease,transform .2s ease}
+body a:focus-visible,body button:focus-visible{outline:3px solid #2bc8b5;outline-offset:4px}
+#owner-contact,#ad-contact-shared{box-sizing:border-box!important;width:min(100% - 32px,1000px)!important;max-width:1000px!important;margin:34px auto 22px!important;padding:26px clamp(16px,3vw,30px)!important;border:1px solid rgba(71,121,237,.22)!important;border-radius:24px!important;background:linear-gradient(125deg,#fff 0%,#f0f7ff 54%,#edfffb 100%)!important;color:#17243b!important;box-shadow:0 22px 60px rgba(52,88,145,.15),inset 0 1px 0 #fff!important;text-align:center!important;position:relative;overflow:hidden}
+#owner-contact:before,#ad-contact-shared:before{content:"";position:absolute;inset:-50% auto auto -12%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(80,154,255,.2),transparent 70%);pointer-events:none}
+#owner-contact h2,#ad-contact-shared h2{color:#17243b!important;margin:0 0 10px!important}
+#owner-contact p,#ad-contact-shared p{color:#52627a!important}
+#owner-contact a,#ad-contact-shared a{color:#285bc7!important;font-weight:800;overflow-wrap:anywhere}
+#owner-contact .owner-signature,#ad-contact-shared .owner-signature{margin-top:18px!important;padding-top:14px;border-top:1px solid #dce7f5;font-weight:850;color:#17243b!important}
+#owner-contact a[href^="tel:"],#ad-contact-shared a[href^="tel:"]{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:13px;background:linear-gradient(120deg,#4779ed,#2bc8b5);color:white!important;text-decoration:none;box-shadow:0 8px 20px rgba(71,121,237,.2)}
+.finish-3d-stage{perspective:1100px;transform-style:preserve-3d}
+.finish-3d-card{position:relative;isolation:isolate;transform-style:preserve-3d;transition:transform .18s ease-out,box-shadow .25s ease;will-change:transform}
+.finish-3d-card:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(120deg,rgba(255,255,255,.55),transparent 38%,rgba(77,192,220,.10));opacity:.7;transform:translateZ(1px)}
+.finish-3d-card .finish-float{transform:translateZ(24px)}
+@media(max-width:680px){#owner-contact,#ad-contact-shared{width:calc(100% - 24px)!important;padding:22px 15px!important}.finish-3d-card{transform:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.finish-3d-card{transform:none!important}}
+</style>
+<script id="unified-3d-pointer-motion">
+(()=>{const init=()=>{const candidates=[...document.querySelectorAll('main,.hero,.hero-card,.hero-content,.hero-visual,.orb,.visual,.showcase,.intro,.profile-card,.features .feature,.project-grid .project')];const seen=new Set();let count=0;for(const el of candidates){if(seen.has(el)||count>=7)continue;if(el.closest('#owner-contact,#ad-contact-shared,footer,nav,header'))continue;const rect=el.getBoundingClientRect();if(rect.width<140||rect.height<90)continue;seen.add(el);el.classList.add('finish-3d-card');if(!el.parentElement?.classList.contains('finish-3d-stage')){const wrap=document.createElement('div');wrap.className='finish-3d-stage';el.parentNode.insertBefore(wrap,el);wrap.appendChild(el)}el.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='rotateX('+(-y*7).toFixed(2)+'deg) rotateY('+(x*9).toFixed(2)+'deg) translateY(-2px)';el.style.boxShadow='0 24px 50px rgba(52,88,145,.18)'},{passive:true});el.addEventListener('pointerleave',()=>{el.style.transform='';el.style.boxShadow='';},{passive:true});count++} };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();
+</script>
 
 </body>
 </html>
