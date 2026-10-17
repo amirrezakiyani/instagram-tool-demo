@@ -147,10 +147,48 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
     
   </main>
   <script>
-    const orb=document.getElementById('orb'); const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches; let pointerFrame=0; if(orb&&!reduceMotion){document.addEventListener('pointermove',e=>{if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.06}px, ${(e.clientY-innerHeight/2)*.06}px)`;pointerFrame=0})},{passive:true})}
-    document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const raw=document.getElementById('url').value.trim();let parsed;try{parsed=new URL(raw)}catch(_){return}const host=parsed.hostname.toLowerCase();const ok=parsed.protocol==='https:'&&(host==='instagram.com'||host.endsWith('.instagram.com'));const result=document.getElementById('result');const title=document.getElementById('title');const type=document.getElementById('type');const notice=document.querySelector('.notice');const source=document.getElementById('safe-open-source');source.hidden=true;source.removeAttribute('href');if(!ok){title.textContent='نشانی اینستاگرام معتبر نیست';type.textContent='دامنهٔ نامعتبر';notice.textContent='لطفاً یک لینک HTTPS از دامنهٔ instagram.com وارد کن. این صفحه صرفاً نسخهٔ نمایشی است.';result.style.display='block';return}const u=parsed.pathname.toLowerCase();let t='محتوای اینستاگرام';if(u.includes('/reel/'))t='ریلز';else if(u.includes('/p/'))t='پست';else if(u.includes('/audio/'))t='آهنگ';else if(/^\/[^/]+\/?$/.test(u))t='پروفایل';type.textContent=t;title.textContent='لینک با موفقیت شناسایی شد';notice.textContent='این نسخه فقط نوع لینک را تشخیص می‌دهد و دانلود مستقیم انجام نمی‌دهد. برای مشاهدهٔ محتوا می‌توانی منبع اصلی را باز کنی.';source.href=parsed.href;source.hidden=false;result.style.display='block'});
+    const orb=document.getElementById('orb');
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let pointerFrame=0;
+    if(orb&&!reduceMotion){document.addEventListener('pointermove',e=>{if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{orb.style.transform=`translate(${(e.clientX-innerWidth/2)*.06}px, ${(e.clientY-innerHeight/2)*.06}px)`;pointerFrame=0})},{passive:true})}
+    const form=document.getElementById('form');
+    const input=document.getElementById('url');
+    const result=document.getElementById('result');
+    const title=document.getElementById('title');
+    const type=document.getElementById('type');
+    const notice=document.querySelector('.notice');
+    const button=form.querySelector('button');
+    form.querySelector('button').innerHTML='دانلود <span aria-hidden="true">↓</span>';
+    document.getElementById('safe-open-source').hidden=true;
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const raw=input.value.trim();
+      let parsed;
+      try{parsed=new URL(raw)}catch(_){return}
+      const host=parsed.hostname.toLowerCase();
+      const ok=parsed.protocol==='https:'&&(host==='instagram.com'||host==='www.instagram.com')&&(/^\/(reel|reels|p|tv)\/[A-Za-z0-9_-]+\/?$/.test(parsed.pathname));
+      if(!ok){result.style.display='block';title.textContent='لینک معتبر نیست';type.textContent='';notice.textContent='لینک عمومی ریلز یا پست اینستاگرام را وارد کن.';return}
+      button.disabled=true;button.innerHTML='در حال دانلود…';result.style.display='none';
+      try{
+        const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/octet-stream, application/json'},body:JSON.stringify({url:parsed.href})});
+        if(!response.ok){
+          let message='دانلود این لینک ممکن نشد. ممکن است پست خصوصی باشد یا اینستاگرام دسترسی را محدود کرده باشد.';
+          try{const data=await response.json();if(data&&data.error)message=data.error}catch(_){}
+          throw new Error(message);
+        }
+        const blob=await response.blob();
+        if(!blob.size)throw new Error('فایل دانلودی خالی بود؛ دوباره تلاش کن.');
+        const disposition=response.headers.get('Content-Disposition')||'';
+        const match=disposition.match(/filename="?([^";]+)"?/i);
+        const filename=match?match[1]:'downloadino-instagram.mp4';
+        const objectUrl=URL.createObjectURL(blob);
+        const a=document.createElement('a');a.href=objectUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+        setTimeout(()=>URL.revokeObjectURL(objectUrl),30000);
+      }catch(err){
+        result.style.display='block';title.textContent='دانلود انجام نشد';type.textContent='';notice.textContent=err.message||'خطا در دریافت فایل.';
+      }finally{button.disabled=false;button.innerHTML='دانلود <span aria-hidden="true">↓</span>'}
+    });
   </script>
-
 <section id="ad-contact-shared" dir="rtl" aria-labelledby="ad-title">
   <div class="ad-visual" aria-hidden="true"><div class="ad-megaphone"><span class="mega-mouth"></span><span class="mega-body"></span><span class="mega-handle"></span><span class="mega-grip"></span></div><span class="ad-spark ad-spark-one">✦</span><span class="ad-spark ad-spark-two">✧</span><span class="ad-spark ad-spark-three">✦</span><div class="ad-mini-label">YOUR BRAND</div></div>
   <div class="ad-copy"><span class="ad-kicker">PARTNERSHIPS</span><h2 id="ad-title">جایگاه تبلیغات شما</h2><p>برای معرفی برند، تبلیغات یا همکاری تجاری، پیام بده تا دربارهٔ شرایط و جایگاه تبلیغ صحبت کنیم.</p><a class="ad-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amirreki.5685%40gmail.com&amp;su=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA" target="_blank" rel="noopener noreferrer">ارسال درخواست تبلیغات <span aria-hidden="true">↗</span></a></div>
